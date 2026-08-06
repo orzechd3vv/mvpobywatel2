@@ -64,8 +64,10 @@
             const birthYear = birthDate.getFullYear();
             const isAdult = currentYear - birthYear >= 18;
 
-            const issueDate = new Date(currentYear - 2, 0, 1);
-            const expiryDate = new Date(currentYear + 2, 0, 1);
+            const randMonth = Math.floor(Math.random() * 12);
+            const randDay = Math.floor(Math.random() * 28) + 1;
+            const issueDate = new Date(currentYear - 2, randMonth, randDay);
+            const expiryDate = new Date(currentYear + 2, randMonth, randDay);
 
             const homeDate = new Date(birthDate.getTime());
             homeDate.setFullYear(homeDate.getFullYear() + 1);
