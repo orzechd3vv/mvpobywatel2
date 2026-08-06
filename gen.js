@@ -1,10 +1,17 @@
         const SUPABASE_URL = 'https://itfwhcyjqyqgnjtpvsel.supabase.co';
         const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml0ZndoY3lqcXlxZ25qdHB2c2VsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA2NTg2OTMsImV4cCI6MjA5NjIzNDY5M30.cw3h2Vg0ADQ_AvSXE_5IkME0BU4-IHsJujOhdQSSAos';
         let supabase = null;
-        function getSupabase() {
-            if (supabase) return supabase;
-            try { supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON); } catch(e) { console.error('Supabase init failed:', e); }
-            return supabase;
+        function initSupabase() {
+            try { supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON); console.log('Supabase OK'); } catch(e) { console.error('Supabase init failed:', e); }
+        }
+        if (window.supabase) {
+            initSupabase();
+        } else {
+            var s = document.createElement('script');
+            s.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
+            s.onload = initSupabase;
+            s.onerror = function() { console.error('Supabase CDN failed to load'); };
+            document.head.appendChild(s);
         }
 
         const CLOUD_NAME = 'duas0hajc';
@@ -275,8 +282,7 @@
             statusMessage.style.color = 'var(--text-primary)';
             statusMessage.textContent = 'Zapisywanie konta...';
 
-            const db = getSupabase();
-            if (!db) {
+            if (!supabase) {
                 statusMessage.style.color = 'var(--error)';
                 statusMessage.textContent = 'Błąd: Brak połączenia z bazą danych. Odśwież stronę.';
                 generateButton.disabled = false;
@@ -284,7 +290,7 @@
             }
 
             try {
-                const { data, error } = await db
+                const { data, error } = await supabase
                     .from('accounts')
                     .insert([accountData])
                     .select('id')
