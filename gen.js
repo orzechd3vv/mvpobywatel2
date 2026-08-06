@@ -70,7 +70,7 @@
             const expiryDate = new Date(currentYear + 2, randMonth, randDay);
 
             const homeDate = new Date(birthDate.getTime());
-            homeDate.setFullYear(homeDate.getFullYear() + 1);
+            homeDate.setDate(homeDate.getDate() + 21);
 
             const birthMonth = birthDate.getMonth() + 1;
             const birthDay = birthDate.getDate();
