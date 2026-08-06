@@ -125,13 +125,13 @@ body {
 .card-content {
     display: flex;
     align-items: flex-start;
-    padding: 16px 18px;
+    padding: 18px 18px;
 }
 
 .card-icon {
     margin-right: 14px;
     flex-shrink: 0;
-    margin-top: 2px;
+    margin-top: 18px;
 }
 
 .card-text {
