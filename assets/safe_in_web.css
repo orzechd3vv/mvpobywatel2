@@ -5,15 +5,6 @@ body {
     padding: 0;
 }
 
-.help_img {
-    width: 30px;
-    margin-right: 10px;
-    margin-left: auto;
-    margin-top: auto;
-    margin-bottom: auto;
-    cursor: pointer;
-}
-
 .top_grid {
     z-index: 1;
     background-color: var(--background);
@@ -112,13 +103,13 @@ body {
 }
 
 .cards {
+    background-color: var(--secondary);
+    border-radius: 16px;
+    overflow: hidden;
     margin-bottom: 24px;
 }
 
 .card {
-    background-color: var(--secondary);
-    border-radius: 16px;
-    margin-bottom: 12px;
     cursor: pointer;
     transition: transform 0.2s;
 }
@@ -131,7 +122,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 18px 20px;
+}
+
+.card-icon {
+    margin-right: 14px;
+    flex-shrink: 0;
 }
 
 .card-text {
@@ -139,36 +135,42 @@ body {
 }
 
 .card-title {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 600;
     color: white;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
 }
 
 .card-desc {
-    font-size: 14px;
+    font-size: 13px;
     color: #707070;
     line-height: 1.4;
 }
 
 .card-arrow {
-    font-size: 24px;
-    color: #707070;
+    font-size: 22px;
+    color: #555;
     margin-left: 12px;
 }
 
+.card-divider {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.08);
+    margin: 0 20px;
+}
+
 .info-box {
-    background-color: #f0f7ff;
+    background-color: #e8f4fd;
     border-radius: 16px;
-    padding: 20px;
+    padding: 18px 20px;
     display: flex;
     align-items: flex-start;
-    gap: 12px;
+    gap: 14px;
 }
 
 .info-icon {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
     background-color: #3b82f6;
     color: white;
     border-radius: 50%;
@@ -176,7 +178,7 @@ body {
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 13px;
     flex-shrink: 0;
 }
 
@@ -223,4 +225,10 @@ body.light-mode .info-text {
 }
 body.light-mode .back_text {
     color: #111111;
+}
+body.light-mode .card-divider {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+body.light-mode .card-icon svg {
+    stroke: #555;
 }
