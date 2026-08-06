@@ -107,31 +107,35 @@ body {
 
 .cards {
     background-color: var(--secondary);
-    border-radius: 16px;
+    border-radius: 14px;
     overflow: hidden;
     margin-bottom: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .card {
     cursor: pointer;
-    transition: background 0.2s;
+    transition: background 0.15s;
 }
 
 .card:active {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.04);
 }
 
 .card-content {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 18px 20px;
+    padding: 16px 18px;
 }
 
 .card-icon {
-    margin-right: 14px;
+    margin-right: 16px;
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
 }
 
 .card-text {
@@ -139,15 +143,16 @@ body {
 }
 
 .card-title {
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 600;
     color: white;
     margin-bottom: 2px;
+    line-height: 1.3;
 }
 
 .card-desc {
     font-size: 13px;
-    color: #707070;
+    color: #888;
     line-height: 1.4;
 }
 
@@ -159,7 +164,7 @@ body {
 .card-divider {
     height: 1px;
     background-color: rgba(255, 255, 255, 0.08);
-    margin: 0 20px;
+    margin: 0 18px;
 }
 
 .info-box {
@@ -227,14 +232,17 @@ body.light-mode .info-text {
     color: #1f2937;
 }
 body.light-mode .cards {
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 body.light-mode .card-divider {
-    background-color: rgba(0, 0, 0, 0.08);
+    background-color: rgba(0, 0, 0, 0.1);
 }
 body.light-mode .card-icon svg {
-    stroke: #555;
+    stroke: #333;
 }
 body.light-mode .card:active {
-    background: rgba(0, 0, 0, 0.03);
+    background: rgba(0, 0, 0, 0.04);
+}
+body.light-mode .card-arrow path {
+    stroke: #ccc;
 }
