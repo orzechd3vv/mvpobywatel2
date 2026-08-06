@@ -35,9 +35,11 @@
     </div>
 
     <div class="top_grid">
-        <div class="action_grid">
-            <img src="https://i.imgur.com/aXIO2NG.png" class="back_img">
-            <p onclick="sendTo('services')" class="back_text">Usługi</p>
+        <div class="action_grid" onclick="sendTo('services')">
+            <svg class="back_arrow" width="12" height="20" viewBox="0 0 12 20" fill="none">
+                <path d="M10 2L2 10L10 18" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <p class="back_text">Usługi</p>
         </div>
         <p class="title_text">Bezpiecznie w sieci</p>
     </div>
@@ -45,10 +47,12 @@
     <div class="container">
         <div class="icon-section">
             <div class="icon-circle">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#7c3aed" stroke-width="1.5" fill="#c4b5fd"/>
-                    <circle cx="12" cy="12" r="4" stroke="#7c3aed" stroke-width="1.5" fill="none"/>
-                    <path d="M12 2v4M12 18v4M2 12h4M18 12h4" stroke="#7c3aed" stroke-width="1.5" stroke-linecap="round"/>
+                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="#c4b5fd" stroke="#7c3aed" stroke-width="1"/>
+                    <circle cx="12" cy="11" r="4" stroke="#7c3aed" stroke-width="1.5" fill="none"/>
+                    <line x1="12" y1="7" x2="12" y2="15" stroke="#7c3aed" stroke-width="1.2"/>
+                    <line x1="8" y1="11" x2="16" y2="11" stroke="#7c3aed" stroke-width="1.2"/>
+                    <ellipse cx="12" cy="11" rx="2" ry="4" stroke="#7c3aed" stroke-width="1" fill="none"/>
                 </svg>
             </div>
         </div>
@@ -61,7 +65,7 @@
         <div class="cards">
             <div class="card">
                 <div class="card-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
                     </svg>
                 </div>
@@ -70,13 +74,15 @@
                         <div class="card-title">Zgłoś incydent</div>
                         <div class="card-desc">Oszustwa, cyberataki lub nielegalne treści.</div>
                     </div>
-                    <div class="card-arrow">›</div>
+                    <svg class="card-arrow" width="8" height="14" viewBox="0 0 8 14" fill="none">
+                        <path d="M1 1L7 7L1 13" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
                 </div>
             </div>
             <div class="card-divider"></div>
             <div class="card">
                 <div class="card-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/>
                     </svg>
                 </div>
@@ -85,13 +91,21 @@
                         <div class="card-title">Baza wiedzy</div>
                         <div class="card-desc">Dowiedz się, jak chronić swoje dane i unikać zagrożeń w sieci.</div>
                     </div>
-                    <div class="card-arrow">›</div>
+                    <svg class="card-arrow" width="8" height="14" viewBox="0 0 8 14" fill="none">
+                        <path d="M1 1L7 7L1 13" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
                 </div>
             </div>
         </div>
 
         <div class="info-box">
-            <div class="info-icon">i</div>
+            <div class="info-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="12" y1="16" x2="12" y2="12"/>
+                    <line x1="12" y1="8" x2="12.01" y2="8"/>
+                </svg>
+            </div>
             <div class="info-text">
                 Chcesz być na bieżąco z aktualnymi ostrzeżeniami o nadużyciach w sieci?
                 <a href="#" class="info-link">Włącz powiadomienia</a>

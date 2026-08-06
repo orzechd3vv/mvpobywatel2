@@ -21,8 +21,14 @@ body {
 .action_grid {
     cursor: pointer;
     margin-left: 10px;
-    display: grid;
-    grid-template-columns: max-content max-content;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.back_arrow {
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .title_text {
@@ -37,17 +43,10 @@ body {
 }
 
 .back_text {
-    color: var(--text);
+    color: #3b82f6;
     font-weight: 500;
     font-size: 18px;
     height: max-content;
-    margin-top: auto;
-    margin-bottom: auto;
-}
-
-.back_img {
-    width: 9px;
-    margin-right: 4px;
     margin-top: auto;
     margin-bottom: auto;
 }
@@ -76,8 +75,8 @@ body {
 }
 
 .icon-circle svg {
-    width: 48px;
-    height: 48px;
+    width: 50px;
+    height: 50px;
 }
 
 .titleall {
@@ -107,15 +106,16 @@ body {
     border-radius: 16px;
     overflow: hidden;
     margin-bottom: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .card {
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: background 0.2s;
 }
 
 .card:active {
-    transform: scale(0.98);
+    background: rgba(255, 255, 255, 0.03);
 }
 
 .card-content {
@@ -148,9 +148,8 @@ body {
 }
 
 .card-arrow {
-    font-size: 22px;
-    color: #555;
     margin-left: 12px;
+    flex-shrink: 0;
 }
 
 .card-divider {
@@ -169,16 +168,13 @@ body {
 }
 
 .info-icon {
-    width: 22px;
-    height: 22px;
+    width: 24px;
+    height: 24px;
     background-color: #3b82f6;
-    color: white;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: bold;
-    font-size: 13px;
     flex-shrink: 0;
 }
 
@@ -211,11 +207,14 @@ body.light-mode .subtitle {
 body.light-mode .card-desc {
     color: #555558 !important;
 }
-body.light-mode .card-arrow {
-    color: #555558 !important;
+body.light-mode .card-arrow path {
+    stroke: #555 !important;
 }
-body.light-mode .back_img {
-    filter: invert(0.3) sepia(1) saturate(20) hue-rotate(190deg);
+body.light-mode .back_arrow path {
+    stroke: #3b82f6 !important;
+}
+body.light-mode .back_text {
+    color: #3b82f6;
 }
 body.light-mode .info-box {
     background-color: #e8f4fd;
@@ -223,12 +222,15 @@ body.light-mode .info-box {
 body.light-mode .info-text {
     color: #1f2937;
 }
-body.light-mode .back_text {
-    color: #111111;
+body.light-mode .cards {
+    border: 1px solid rgba(0, 0, 0, 0.08);
 }
 body.light-mode .card-divider {
     background-color: rgba(0, 0, 0, 0.08);
 }
 body.light-mode .card-icon svg {
     stroke: #555;
+}
+body.light-mode .card:active {
+    background: rgba(0, 0, 0, 0.03);
 }
