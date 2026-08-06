@@ -2,6 +2,9 @@
 // MVP Obywatel - Login z walidacją hasła z Supabase
 // =========================================================
 
+// Aktualna wersja aplikacji
+var APP_VERSION = 2;
+
 // Pobierz parametry z URL
 var params = new URLSearchParams(window.location.search);
 var accountId = params.get('account_id');
@@ -17,6 +20,38 @@ document.querySelector(".welcome").innerHTML = welcome;
 // Elementy UI
 var loginButton = document.querySelector(".login");
 var loginError = document.getElementById("loginError");
+
+// Funkcja aktualizacji wersji konta
+async function updateAccountVersion(supabaseClient, accountId, currentVersion) {
+    if (currentVersion >= APP_VERSION) return null;
+    
+    var updates = {};
+    
+    // Aktualizacje dla wersji 1 → 2
+    if (currentVersion < 2) {
+        // Tutaj dodajemy nowe pola lub zmiany dla wersji 2
+        // Np. nowe pole "notifications_enabled" z domyślną wartością
+        updates.notifications_enabled = true;
+    }
+    
+    // Dodaj numer nowej wersji
+    updates.version = APP_VERSION;
+    
+    // Aktualizuj w bazie
+    var { data, error } = await supabaseClient
+        .from('accounts')
+        .update(updates)
+        .eq('id', accountId)
+        .select('*')
+        .single();
+    
+    if (error) {
+        console.error('Błąd aktualizacji wersji:', error);
+        return null;
+    }
+    
+    return data;
+}
 
 // Obsługa kliknięcia przycisku login — teraz z walidacją hasła
 loginButton.addEventListener('click', async () => {
@@ -45,7 +80,16 @@ loginButton.addEventListener('click', async () => {
             return;
         }
 
-        const userAccount = data[0];
+        var userAccount = data[0];
+
+        // Sprawdź wersję i zaktualizuj jeśli trzeba
+        var accountVersion = userAccount.version || 1;
+        if (accountVersion < APP_VERSION) {
+            var updatedAccount = await updateAccountVersion(supabaseClient, userAccount.id, accountVersion);
+            if (updatedAccount) {
+                userAccount = updatedAccount;
+            }
+        }
 
         // Hasło poprawne! Zbuduj URL z danymi konta
         const nameMap = {

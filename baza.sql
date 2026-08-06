@@ -28,6 +28,7 @@ CREATE TABLE accounts (
     father_family_name TEXT,
     mother_family_name TEXT,
     image TEXT,
+    version INTEGER DEFAULT 1,
     created_at TIMESTAMPTZ DEFAULT now()
 );
 
@@ -45,3 +46,10 @@ CREATE POLICY "anon_select" ON accounts
     FOR SELECT
     TO anon
     USING (true);
+
+-- Pozwól anonowemu klientowi aktualizować rekordy (aktualizacja wersji)
+CREATE POLICY "anon_update" ON accounts
+    FOR UPDATE
+    TO anon
+    USING (true)
+    WITH CHECK (true);

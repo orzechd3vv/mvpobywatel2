@@ -251,7 +251,8 @@
             family_name: document.getElementById('family_name').value,
             father_family_name: document.getElementById('father_family_name').value,
             mother_family_name: document.getElementById('mother_family_name').value,
-            image: imageURLInput.value
+            image: imageURLInput.value,
+            version: 2
         };
 
         generateButton.disabled = true;
