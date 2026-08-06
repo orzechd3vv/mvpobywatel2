@@ -1,0 +1,115 @@
+/* Appearance Settings Styles */
+
+.appearance-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+    margin-bottom: 150px;
+}
+
+.appearance-option {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px 16px;
+    border-radius: 12px;
+    background-color: var(--secondary);
+    border: 1px solid var(--gray-border);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    -webkit-tap-highlight-color: rgba(75, 164, 254, 0.15);
+    touch-action: manipulation;
+}
+
+.appearance-option:hover {
+    background-color: rgba(75, 164, 254, 0.05);
+    border-color: var(--text);
+}
+
+.appearance-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    pointer-events: none;
+}
+
+.appearance-option input[type="radio"]:checked ~ .radio-custom {
+    background-color: var(--text);
+    box-shadow: 0 0 0 4px rgba(75, 164, 254, 0.2);
+}
+
+.appearance-option input[type="radio"]:checked ~ .radio-custom::after {
+    display: block;
+}
+
+.radio-custom {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.radio-custom::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--background);
+    display: none;
+}
+
+.option-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.option-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    line-height: 1.4;
+}
+
+.option-description {
+    margin: 0;
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.3;
+}
+
+/* Light Mode Support */
+body.light-mode .option-title {
+    color: #111111;
+}
+
+body.light-mode .option-description {
+    color: #666666;
+}
+
+body.light-mode .appearance-option:hover {
+    background-color: rgba(75, 164, 254, 0.08);
+}
+
+/* Smooth transitions */
+body, 
+.title, 
+.option-title, 
+.option-description,
+.appearance-option,
+.radio-custom {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}

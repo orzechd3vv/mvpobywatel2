@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjoiIiwic2hvcnRfbmFtZSI6IiIsInRoZW1lX2NvbG9yIjoiIzEwMTMxNyIsImJhY2tncm91bmRfY29sb3IiOiIjMTAxMzE3IiwiZGlzcGxheSI6InN0YW5kYWxvbmUifQ==">
+    <title>mObywatel</title>
+    
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link rel="stylesheet" href="assetsdiff/main.css">
+    <link rel="stylesheet" href="assetsdiff/flow.css">
+    <link rel="stylesheet" href="more_files/appearance.css">
+    <link rel="icon" type="image/x-icon" href="https://i.imgur.com/U7TRg0V.png">
+    <link rel="apple-touch-icon" href="https://i.imgur.com/U7TRg0V.png">
+    <link rel="shortcut icon" href="https://i.imgur.com/U7TRg0V.png">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+</head>
+<body class="has-blur-topbar hero-layout">
+
+    <div class="bottom_bar">
+        <div class="bottom_bar_grid">
+            <div class="bottom_element_grid" send="home">
+                <div class="bottom_element_image home"></div>
+                <p class="bottom_element_text">Dokumenty</p>
+            </div>
+            <div class="bottom_element_grid" send="services">
+                <div class="bottom_element_image services"></div>
+                <p class="bottom_element_text">Usługi</p>
+            </div>
+            <div class="bottom_element_grid" send="qr">
+                <div class="bottom_element_image qr"></div>
+                <p class="bottom_element_text">Kod QR</p>
+            </div>
+            <div class="bottom_element_grid" send="more">
+                <div class="bottom_element_image more"></div>
+                <p class="bottom_element_text">Więcej</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="top_slide_bar">
+        <img class="main_page_logo" src="./more_files/logo_large.png">
+        <p class="main_title">Wygląd</p>
+        <p class="main_button" onclick="sendTo('more')">← Wróć</p>
+    </div>
+
+    <header class="hero-header" data-hero data-hero-collapse-offset="24">
+        <div class="hero-header__row">
+            <div class="hero-header__logo">
+                <img src="./more_files/logo_large.png" alt="Godło" />
+            </div>
+            <div class="hero-header__texts">
+                <p class="hero-header__title">Wygląd</p>
+                <p class="hero-header__subtitle">Wybierz motyw</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <p class="title">Wygląd</p>
+        
+        <div class="appearance-options">
+            <!-- Light Mode -->
+            <label class="appearance-option">
+                <input type="radio" name="theme" value="light" class="theme-radio">
+                <div class="radio-custom"></div>
+                <div class="option-content">
+                    <p class="option-title">Tryb jasny</p>
+                </div>
+            </label>
+
+            <!-- Dark Mode -->
+            <label class="appearance-option">
+                <input type="radio" name="theme" value="dark" class="theme-radio">
+                <div class="radio-custom"></div>
+                <div class="option-content">
+                    <p class="option-title">Tryb ciemny</p>
+                </div>
+            </label>
+
+            <!-- Automatic Mode -->
+            <label class="appearance-option">
+                <input type="radio" name="theme" value="auto" class="theme-radio">
+                <div class="radio-custom"></div>
+                <div class="option-content">
+                    <p class="option-title">Automatyczny</p>
+                    <p class="option-description">Wygląd dopasowany do motywu wyświetlacza urządzenia</p>
+                </div>
+            </label>
+        </div>
+    </div>
+
+    <script src="assets/hero.js" defer></script>
+    <script src="assets/bar.js" defer></script>
+    <script src="assets/theme.js" defer></script>
+    <script src="assetsdiff/manifest.js.pobrane"></script>
+    <script src="assetsdiff/cache.js.pobrane"></script>
+    <script src="assetsdiff/flow.js.pobrane"></script>
+</body>
+</html>
