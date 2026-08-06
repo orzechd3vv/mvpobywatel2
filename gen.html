@@ -406,25 +406,9 @@
             touch-action: manipulation;
         }
 
-        #autofillButton::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            transition: left 0.5s ease;
-            pointer-events: none;
-        }
-
         #autofillButton:hover:not([disabled]) {
             transform: translateY(-1px);
             box-shadow: 0 4px 20px rgba(224, 32, 32, 0.35);
-        }
-
-        #autofillButton:hover:not([disabled])::before {
-            left: 100%;
         }
 
         #autofillButton:active:not([disabled]) {
