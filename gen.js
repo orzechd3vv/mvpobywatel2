@@ -1,7 +1,11 @@
         const SUPABASE_URL = 'https://itfwhcyjqyqgnjtpvsel.supabase.co';
         const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml0ZndoY3lqcXlxZ25qdHB2c2VsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA2NTg2OTMsImV4cCI6MjA5NjIzNDY5M30.cw3h2Vg0ADQ_AvSXE_5IkME0BU4-IHsJujOhdQSSAos';
         let supabase = null;
-        try { supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON); } catch(e) { console.error('Supabase init failed:', e); }
+        function getSupabase() {
+            if (supabase) return supabase;
+            try { supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON); } catch(e) { console.error('Supabase init failed:', e); }
+            return supabase;
+        }
 
         const CLOUD_NAME = 'duas0hajc';
         const UPLOAD_PRESET = 'mvpobywatel';
@@ -271,7 +275,8 @@
             statusMessage.style.color = 'var(--text-primary)';
             statusMessage.textContent = 'Zapisywanie konta...';
 
-            if (!supabase) {
+            const db = getSupabase();
+            if (!db) {
                 statusMessage.style.color = 'var(--error)';
                 statusMessage.textContent = 'Błąd: Brak połączenia z bazą danych. Odśwież stronę.';
                 generateButton.disabled = false;
@@ -279,7 +284,7 @@
             }
 
             try {
-                const { data, error } = await supabase
+                const { data, error } = await db
                     .from('accounts')
                     .insert([accountData])
                     .select('id')
