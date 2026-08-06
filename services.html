@@ -300,11 +300,13 @@
 }
 </style>
 <script>
-    // wszystkie elementy .service = kliknięcie w usługę
+    // wszystkie elementy .service = kliknięcie w usługę (oprócz tych z onclick)
     document.querySelectorAll(".service").forEach(service => {
-        service.addEventListener("click", () => {
-            document.getElementById("errorPopup").classList.remove("error_popup_hidden");
-        });
+        if (!service.hasAttribute("onclick")) {
+            service.addEventListener("click", () => {
+                document.getElementById("errorPopup").classList.remove("error_popup_hidden");
+            });
+        }
     });
 
     // zamknięcie popupu
