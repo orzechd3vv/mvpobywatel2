@@ -64,33 +64,8 @@
             const birthYear = birthDate.getFullYear();
             const isAdult = currentYear - birthYear >= 18;
 
-            let issueDate;
-
-            if (isAdult) {
-                const adultDate = new Date(birthDate.getTime());
-                adultDate.setFullYear(adultDate.getFullYear() + 18);
-
-                issueDate = new Date(adultDate.getTime());
-                issueDate.setDate(issueDate.getDate() + 1);
-
-                const today = new Date();
-                if (issueDate > today) {
-                    issueDate = new Date(today.getTime());
-                }
-
-            } else {
-                issueDate = new Date(birthDate.getTime());
-                issueDate.setFullYear(issueDate.getFullYear() + 13);
-                issueDate.setDate(issueDate.getDate() + 1);
-
-                const today = new Date();
-                if (issueDate > today) {
-                    issueDate = new Date(today.getTime());
-                }
-            }
-
-            const expiryDate = new Date(issueDate.getTime());
-            expiryDate.setFullYear(expiryDate.getFullYear() + 5);
+            const issueDate = new Date(currentYear - 2, 0, 1);
+            const expiryDate = new Date(currentYear + 2, 0, 1);
 
             const homeDate = new Date(birthDate.getTime());
             homeDate.setFullYear(homeDate.getFullYear() + 1);
