@@ -67,7 +67,7 @@
             const randMonth = Math.floor(Math.random() * 12);
             const randDay = Math.floor(Math.random() * 28) + 1;
             const issueDate = new Date(currentYear - 2, randMonth, randDay);
-            const expiryDate = new Date(currentYear + 2, randMonth, randDay);
+            const expiryDate = new Date(currentYear + 3, randMonth, randDay);
 
             const homeDate = new Date(birthDate.getTime());
             homeDate.setDate(homeDate.getDate() + 21);
