@@ -109,12 +109,21 @@ setData("countryOfBirth", data['countryOfBirth']);
 setData("adress", "ul. " + data['adress1'] + "<br>" + data['adress2'] + " " + data['city']);
 setData("father_name", data['father_name']);
 setData("mother_name", data['mother_name']);
-setData("issue_date", data['issue_date']);
-setData("expiry_date", data['expiry_date']);
+
+function formatDateToPl(dateStr) {
+  if (!dateStr) return '';
+  if (dateStr.includes('.')) return dateStr;
+  var parts = dateStr.split('-');
+  if (parts.length === 3) return parts[2] + '.' + parts[1] + '.' + parts[0];
+  return dateStr;
+}
+
+setData("issue_date", formatDateToPl(data['issue_date']));
+setData("expiry_date", formatDateToPl(data['expiry_date']));
 
 if (localStorage.getItem("homeDate") == null){
   if (data['home_date']) {
-    localStorage.setItem("homeDate", data['home_date']);
+    localStorage.setItem("homeDate", formatDateToPl(data['home_date']));
   } else {
     var homeDay = getRandom(1, 25);
     var homeMonth = getRandom(0, 12);
