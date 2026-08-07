@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>mObywatel</title>
+    <link rel="stylesheet" href="assets/flood.css">
+    <link rel="stylesheet" href="assets/main.css">
+    <link rel="icon" type="image/x-icon" href="https://i.imgur.com/U7TRg0V.png">
+    <link rel="apple-touch-icon" href="https://i.imgur.com/U7TRg0V.png">
+    <link rel="shortcut icon" href="https://i.imgur.com/U7TRg0V.png">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+</head>
+<body class="has-blur-topbar">
+    <div class="bottom_bar">
+        <div class="bottom_bar_grid">
+            <div class="bottom_element_grid" send="home">
+                <div class="bottom_element_image home"></div>
+                <p class="bottom_element_text">Dokumenty</p>
+            </div>
+            <div class="bottom_element_grid" send="services">
+                <div class="bottom_element_image services_open services"></div>
+                <p class="bottom_element_text open">Usługi</p>
+            </div>
+            <div class="bottom_element_grid" send="qr">
+                <div class="bottom_element_image qr"></div>
+                <p class="bottom_element_text">Kod QR</p>
+            </div>
+            <div class="bottom_element_grid" send="more">
+                <div class="bottom_element_image more"></div>
+                <p class="bottom_element_text">Więcej</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="top_grid">
+        <div class="action_grid" onclick="sendTo('services')">
+            <svg class="back_arrow" width="12" height="20" viewBox="0 0 12 20" fill="none">
+                <path d="M10 2L2 10L10 18" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <p class="back_text">Usługi</p>
+        </div>
+        <p class="title_text">Alert powodziowy</p>
+    </div>
+
+    <div class="container">
+        <div class="icon-section">
+            <div class="icon-circle">
+                <img src="./services_files/flood.png" alt="Alert powodziowy" style="width: 50px; height: 50px;">
+            </div>
+        </div>
+
+        <div class="titleall">
+            <div class="title">Sprawdź oficjalne<br>informacje o powodzi</div>
+            <div class="subtitle">Tu znajdziesz aktualne i potwierdzone dane.</div>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#444" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/>
+                            <line x1="8" y1="2" x2="8" y2="18"/>
+                            <line x1="16" y1="6" x2="16" y2="22"/>
+                        </svg>
+                    </div>
+                    <div class="card-text">
+                        <div class="card-title">Mapa ostrzeżeń</div>
+                        <div class="card-desc">Zobacz, na których obszarach obowiązują ostrzeżenia hydrologiczne.</div>
+                    </div>
+                    <svg class="card-arrow" width="10" height="16" viewBox="0 0 10 16" fill="none">
+                        <path d="M2 2L8 8L2 14" stroke="#bbb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="card-divider"></div>
+
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#444" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                            <line x1="12" y1="9" x2="12" y2="13"/>
+                            <line x1="12" y1="17" x2="12.01" y2="17"/>
+                        </svg>
+                    </div>
+                    <div class="card-text">
+                        <div class="card-title">Ostrzeżenia hydrologiczne</div>
+                        <div class="card-desc">Zapoznaj się z aktualnymi ostrzeżeniami hydrologicznymi.</div>
+                    </div>
+                    <svg class="card-arrow" width="10" height="16" viewBox="0 0 10 16" fill="none">
+                        <path d="M2 2L8 8L2 14" stroke="#bbb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="card-divider"></div>
+
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#444" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="16" x2="12" y2="12"/>
+                            <line x1="12" y1="8" x2="12.01" y2="8"/>
+                        </svg>
+                    </div>
+                    <div class="card-text">
+                        <div class="card-title">Jak postępować?</div>
+                        <div class="card-desc">Dowiedz się, co robić w razie powodzi.</div>
+                    </div>
+                    <svg class="card-arrow" width="10" height="16" viewBox="0 0 10 16" fill="none">
+                        <path d="M2 2L8 8L2 14" stroke="#bbb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="12" y1="16" x2="12" y2="12"/>
+                    <line x1="12" y1="8" x2="12.01" y2="8"/>
+                </svg>
+            </div>
+            <div class="info-content">
+                <div class="info-title">Wsparcie materialne</div>
+                <div class="info-text">
+                    Szukasz informacji o wsparciu materialnym dla osób poszkodowanych przez powódź?
+                </div>
+                <a href="https://www.gov.pl" target="_blank" class="info-link">Przejdź do gov.pl</a>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="assets/bar.js" defer></script>
+<script src="assets/theme.js" defer></script>
+<script src="assets/manifest.js"></script>
+</html>

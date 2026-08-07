@@ -17,6 +17,7 @@ var ROUTES = {
     gen: 'gen.html',
     card: 'card.html',
     safe_in_web: 'safe_in_web.html',
+    flood: 'flood.html',
 };
 
 function sendTo(key){
