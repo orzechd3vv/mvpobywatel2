@@ -1,107 +1,22 @@
 <!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel | MVP Obywatel</title>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-        :root {
-            --bg-primary: #050508;
-            --bg-card: rgba(12, 12, 18, 0.85);
-            --text-primary: #f0f0f5;
-            --accent: #e02020;
-            --radius-md: 16px;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            padding: 20px;
-        }
-        .login-box, #adminPanel {
-            background: var(--bg-card);
-            padding: 20px;
-            border-radius: var(--radius-md);
-            max-width: 500px;
-            margin: 50px auto;
-        }
-        input { width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: white; }
-        button { width: 100%; padding: 12px; background: var(--accent); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; }
-        table { width: 100%; color: white; margin-top: 20px; }
-        th, td { padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    </style>
-</head>
+<html>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
 <body>
-    <div id="loginBox" class="login-box">
-        <h3>Logowanie Administratora</h3>
-        <input type="text" id="adminLogin" placeholder="Login">
-        <input type="password" id="adminPass" placeholder="Hasło">
-        <button onclick="login()">Zaloguj</button>
+    <div style="text-align:center; padding: 50px;">
+        <input type="text" id="adminLogin" placeholder="Login"><br>
+        <input type="password" id="adminPass" placeholder="Hasło"><br>
+        <button onclick="testLogin()">Zaloguj</button>
     </div>
-    <div id="adminPanel" style="display:none;">
-        <h3>Konta użytkowników</h3>
-        <table id="accountsTable">
-            <thead><tr><th>Użytkownik</th><th>PESEL</th><th>Akcje</th></tr></thead>
-            <tbody></tbody>
-        </table>
-    </div>
-
     <script>
-        const SUPABASE_URL = 'https://itfwhcyjqyqgnjtpvsel.supabase.co';
-        const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml0ZndoY3lqcXlxZ25qdHB2c2VsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA2NTg2OTMsImV4cCI6MjA5NjIzNDY5M30.cw3h2Vg0ADQ_AvSXE_5IkME0BU4-IHsJujOhdQSSAos';
-        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
-
-        function login() {
-            alert('DEBUG: Kliknięto przycisk!');
-            var loginVal = document.getElementById('adminLogin').value.trim();
-            var passVal = document.getElementById('adminPass').value.trim();
-            
-            console.log('Logowanie:', loginVal, passVal);
-            
-            if(loginVal === 'mvpob12' && passVal === 'Mvpmafiatop123!') {
-                document.getElementById('loginBox').style.display = 'none';
-                document.getElementById('adminPanel').style.display = 'block';
-                loadAccounts();
+        alert('Skrypt załadowany!');
+        function testLogin() {
+            var l = document.getElementById('adminLogin').value;
+            var p = document.getElementById('adminPass').value;
+            alert('Wpisano: ' + l + ' / ' + p);
+            if(l === 'mvpob12' && p === 'Mvpmafiatop123!') {
+                alert('LOGOWANIE OK');
             } else {
-                alert('Błędne dane! Wpisano: ' + loginVal + ' / ' + passVal);
-            }
-        }
-
-        async function loadAccounts() {
-            try {
-                const { data, error } = await supabase.from('accounts').select('*');
-                if(error) throw error;
-                const tbody = document.querySelector('#accountsTable tbody');
-                tbody.innerHTML = '';
-                data.forEach(acc => {
-                    tbody.innerHTML += `<tr>
-                        <td>${acc.name || ''} ${acc.surname || ''}</td>
-                        <td>${acc.pesel || ''}</td>
-                        <td>
-                            <button style="padding:5px; margin-bottom:5px; background:${acc.suspended ? '#22c55e' : '#e02020'}" onclick="toggleSuspend('${acc.id}', ${acc.suspended})">${acc.suspended ? 'Odwieś' : 'Zawieś'}</button>
-                            <button style="padding:5px; background:#666" onclick="deleteAcc('${acc.id}')">Usuń</button>
-                        </td>
-                    </tr>`;
-                });
-            } catch(e) {
-                console.error(e);
-                alert('Błąd ładowania: ' + e.message);
-            }
-        }
-
-        async function toggleSuspend(id, currentStatus) {
-            let reason = '';
-            if(!currentStatus) reason = prompt("Podaj powód zawieszenia:");
-            await supabase.from('accounts').update({ suspended: !currentStatus, suspend_reason: reason }).eq('id', id);
-            loadAccounts();
-        }
-
-        async function deleteAcc(id) {
-            if(confirm('Na pewno usunąć?')) {
-                await supabase.from('accounts').delete().eq('id', id);
-                loadAccounts();
+                alert('BŁĘDNE DANE');
             }
         }
     </script>
