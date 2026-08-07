@@ -54,8 +54,10 @@
         const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
 
         function login() {
+            alert('DEBUG: Kliknięto przycisk!');
             var loginVal = document.getElementById('adminLogin').value.trim();
             var passVal = document.getElementById('adminPass').value.trim();
+            
             console.log('Logowanie:', loginVal, passVal);
             
             if(loginVal === 'mvpob12' && passVal === 'Mvpmafiatop123!') {
