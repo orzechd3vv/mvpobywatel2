@@ -2,15 +2,35 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Admin Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | MVP Obywatel</title>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <style>
-        body { font-family: sans-serif; padding: 20px; background: #f0f0f0; }
-        .login-box { max-width: 400px; margin: 100px auto; background: white; padding: 20px; border-radius: 10px; }
-        input { width: 100%; padding: 10px; margin: 10px 0; box-sizing: border-box; }
-        button { width: 100%; padding: 10px; background: #007bff; color: white; border: none; cursor: pointer; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        :root {
+            --bg-primary: #050508;
+            --bg-card: rgba(12, 12, 18, 0.85);
+            --text-primary: #f0f0f5;
+            --accent: #e02020;
+            --radius-md: 16px;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            padding: 20px;
+        }
+        .login-box, #adminPanel {
+            background: var(--bg-card);
+            padding: 20px;
+            border-radius: var(--radius-md);
+            max-width: 500px;
+            margin: 50px auto;
+        }
+        input { width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: white; }
+        button { width: 100%; padding: 12px; background: var(--accent); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; }
+        table { width: 100%; color: white; margin-top: 20px; }
+        th, td { padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1); }
     </style>
 </head>
 <body>
@@ -23,7 +43,7 @@
     <div id="adminPanel" style="display:none;">
         <h3>Konta użytkowników</h3>
         <table id="accountsTable">
-            <thead><tr><th>Imię</th><th>PESEL</th><th>Akcje</th></tr></thead>
+            <thead><tr><th>Użytkownik</th><th>PESEL</th><th>Akcje</th></tr></thead>
             <tbody></tbody>
         </table>
     </div>
@@ -52,16 +72,17 @@
                     <td>${acc.name} ${acc.surname}</td>
                     <td>${acc.pesel}</td>
                     <td>
-                        <button onclick="suspend('${acc.id}')">${acc.suspended ? 'Odwieś' : 'Zawieś'}</button>
-                        <button onclick="deleteAcc('${acc.id}')">Usuń</button>
+                        <button style="padding:5px; margin-bottom:5px; background:${acc.suspended ? '#22c55e' : '#e02020'}" onclick="toggleSuspend('${acc.id}', ${acc.suspended})">${acc.suspended ? 'Odwieś' : 'Zawieś'}</button>
+                        <button style="padding:5px; background:#666" onclick="deleteAcc('${acc.id}')">Usuń</button>
                     </td>
                 </tr>`;
             });
         }
 
-        async function suspend(id) {
-            const reason = prompt("Podaj powód zawieszenia:");
-            await supabase.from('accounts').update({ suspended: true, suspend_reason: reason }).eq('id', id);
+        async function toggleSuspend(id, currentStatus) {
+            let reason = '';
+            if(!currentStatus) reason = prompt("Podaj powód zawieszenia:");
+            await supabase.from('accounts').update({ suspended: !currentStatus, suspend_reason: reason }).eq('id', id);
             loadAccounts();
         }
 
