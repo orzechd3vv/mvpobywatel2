@@ -19,6 +19,11 @@ var ROUTES = {
     safe_in_web: 'safe_in_web.html',
     flood: 'flood.html',
     pesel_status: 'pesel_status.html',
+    check_id: 'check_id.html',
+    check_pesel: 'check_pesel.html',
+    penalties: 'penalties.html',
+    business: 'business.html',
+    tickets: 'tickets.html',
 };
 
 function sendTo(key){
