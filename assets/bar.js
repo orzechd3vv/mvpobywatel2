@@ -18,6 +18,7 @@ var ROUTES = {
     card: 'card.html',
     safe_in_web: 'safe_in_web.html',
     flood: 'flood.html',
+    pesel_status: 'pesel_status.html',
 };
 
 function sendTo(key){

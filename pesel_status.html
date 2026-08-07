@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>mObywatel</title>
+    <link rel="stylesheet" href="assets/pesel_status.css">
+    <link rel="stylesheet" href="assets/main.css">
+    <link rel="icon" type="image/x-icon" href="https://i.imgur.com/U7TRg0V.png">
+    <link rel="apple-touch-icon" href="https://i.imgur.com/U7TRg0V.png">
+    <link rel="shortcut icon" href="https://i.imgur.com/U7TRg0V.png">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+</head>
+<body class="has-blur-topbar">
+    <div class="bottom_bar">
+        <div class="bottom_bar_grid">
+            <div class="bottom_element_grid" send="home">
+                <div class="bottom_element_image home"></div>
+                <p class="bottom_element_text">Dokumenty</p>
+            </div>
+            <div class="bottom_element_grid" send="services">
+                <div class="bottom_element_image services_open services"></div>
+                <p class="bottom_element_text open">Usługi</p>
+            </div>
+            <div class="bottom_element_grid" send="qr">
+                <div class="bottom_element_image qr"></div>
+                <p class="bottom_element_text">Kod QR</p>
+            </div>
+            <div class="bottom_element_grid" send="more">
+                <div class="bottom_element_image more"></div>
+                <p class="bottom_element_text">Więcej</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="top_grid">
+        <div class="action_grid" onclick="sendTo('services')">
+            <svg class="back_arrow" width="12" height="20" viewBox="0 0 12 20" fill="none">
+                <path d="M10 2L2 10L10 18" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <p class="back_text">Usługi</p>
+        </div>
+        <p class="title_text">Zastrzeż PESEL</p>
+        <div class="help_icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                <line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="icon-section">
+            <div class="icon-circle">
+                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5" y="11" width="14" height="10" rx="2" stroke="#7c3aed" stroke-width="2"/>
+                    <path d="M8 11V7a4 4 0 0 1 8 0v4" stroke="#7c3aed" stroke-width="2"/>
+                    <path d="M12 15v2" stroke="#7c3aed" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="titleall">
+            <div class="title">Twój PESEL jest<br>zastrzeżony</div>
+            <div class="subtitle">Teraz nikt nie wykorzysta go bez Twojej wiedzy.</div>
+        </div>
+
+        <div class="cards">
+            <div class="card-content">
+                <div class="card-title">Zastrzeż PESEL</div>
+                <button class="action-button">Cofnij zastrzeżenie</button>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="12" y1="16" x2="12" y2="12"/>
+                    <line x1="12" y1="8" x2="12.01" y2="8"/>
+                </svg>
+            </div>
+            <div class="info-text">
+                Po każdym cofnięciu zastrzeżenia numeru PESEL nie możesz skorzystać z usługi przez 30 minut.
+            </div>
+        </div>
+
+        <div class="history-title">Historia</div>
+
+        <div class="cards history-cards">
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-text">
+                        <div class="card-title">Kto sprawdzał Twój PESEL</div>
+                        <div class="card-desc">Ostatnia weryfikacja 01.08.2025</div>
+                    </div>
+                    <svg class="card-arrow" width="10" height="16" viewBox="0 0 10 16" fill="none">
+                        <path d="M2 2L8 8L2 14" stroke="#bbb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-text">
+                        <div class="card-title">Twoje zmiany</div>
+                        <div class="card-desc">Ostatnia zmiana 01.08.2025</div>
+                    </div>
+                    <svg class="card-arrow" width="10" height="16" viewBox="0 0 10 16" fill="none">
+                        <path d="M2 2L8 8L2 14" stroke="#bbb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="assets/bar.js" defer></script>
+<script src="assets/theme.js" defer></script>
+<script src="assets/manifest.js"></script>
+</html>

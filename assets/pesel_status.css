@@ -1,0 +1,260 @@
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--background);
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.top_grid {
+    z-index: 1;
+    background-color: var(--background);
+    position: fixed;
+    top: -10px;
+    height: 60px;
+    left: 0;
+    width: 100%;
+    display: grid;
+    margin-top: 10px;
+    grid-template-columns: repeat(3, calc(100% / 3));
+}
+
+.action_grid {
+    cursor: pointer;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.back_arrow {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.title_text {
+    font-size: 19px;
+    color: #ffffff;
+    text-align: center;
+    width: 100%;
+    font-weight: 550;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: max-content;
+}
+
+.back_text {
+    color: #3b82f6;
+    font-weight: 500;
+    font-size: 18px;
+    height: max-content;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.help_icon {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 16px;
+}
+
+.container {
+    padding: 80px 16px 24px 16px;
+    margin-left: 4px;
+}
+
+.icon-section {
+    display: flex;
+    justify-content: left;
+    margin-bottom: 16px;
+    margin-left: 20px;
+}
+
+.icon-circle {
+    width: 100px;
+    aspect-ratio: 1 / 1;
+    background: #ede9fe;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -19px;
+}
+
+.icon-circle svg {
+    width: 50px;
+    height: 50px;
+}
+
+.titleall {
+    margin-left: 3px;
+    color: white;
+}
+
+.title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-align: left;
+    line-height: 1.1;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #707070;
+    text-align: left;
+    margin-bottom: 24px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.cards {
+    background-color: var(--secondary);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: white;
+}
+
+.action-button {
+    background-color: #dbeafe;
+    color: #3b82f6;
+    border: none;
+    border-radius: 14px;
+    padding: 10px 16px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.info-box {
+    background-color: #f0f7ff;
+    border-radius: 16px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.info-icon {
+    width: 24px;
+    height: 24px;
+    background-color: #3b82f6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.info-text {
+    font-size: 13.5px;
+    color: #374151;
+    line-height: 1.45;
+}
+
+.history-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 12px;
+}
+
+.history-cards .card {
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.history-cards .card-content {
+    display: flex;
+    align-items: center;
+    padding: 18px 20px;
+}
+
+.card-text {
+    flex: 1;
+}
+
+.card-desc {
+    font-size: 13px;
+    color: #888;
+    line-height: 1.4;
+    margin-top: 2px;
+}
+
+.card-arrow {
+    margin-left: 12px;
+    flex-shrink: 0;
+}
+
+.card-divider {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.08);
+    margin: 0 18px;
+}
+
+/* ========================================
+   LIGHT MODE SUPPORT
+   ======================================== */
+body.light-mode .title_text {
+    color: #111111 !important;
+}
+body.light-mode .title, body.light-mode .history-title {
+    color: #111111 !important;
+}
+body.light-mode .subtitle {
+    color: #555558 !important;
+}
+body.light-mode .card-title {
+    color: #111111 !important;
+}
+body.light-mode .card-desc {
+    color: #555558 !important;
+}
+body.light-mode .card-arrow path {
+    stroke: #ccc !important;
+}
+body.light-mode .back_arrow path {
+    stroke: #3b82f6 !important;
+}
+body.light-mode .back_text {
+    color: #3b82f6;
+}
+body.light-mode .info-box {
+    background-color: #e8f4fd;
+}
+body.light-mode .info-text {
+    color: #1f2937;
+}
+body.light-mode .cards {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+body.light-mode .card-divider {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+body.light-mode .card-icon svg {
+    stroke: #333;
+}
+body.light-mode .action-button {
+    background-color: #dbeafe;
+    color: #3b82f6;
+}
