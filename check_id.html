@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>mObywatel</title>
+    <link rel="stylesheet" href="assets/service_page.css">
+    <link rel="stylesheet" href="assets/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, user-scalable=no">
+</head>
+<body class="has-blur-topbar">
+    <div class="top_grid">
+        <div class="action_grid" onclick="sendTo('services')">
+            <svg class="back_arrow" width="12" height="20" viewBox="0 0 12 20" fill="none">
+                <path d="M10 2L2 10L10 18" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <p class="back_text">Usługi</p>
+        </div>
+        <p class="title_text">Sprawdź dowód</p>
+    </div>
+
+    <div class="container" style="padding-top: 80px;">
+        <div class="icon-section">
+            <div class="icon-circle">
+                <img src="./services_files/check_id.png" alt="Sprawdź dowód" style="width: 50px; height: 50px;">
+            </div>
+        </div>
+
+        <div class="titleall">
+            <div class="title">Sprawdź, czy dowód<br>jest unieważniony lub<br>zawieszony</div>
+            <div class="subtitle">Możesz sprawdzić dowód osobisty swój lub<br>innej osoby.</div>
+        </div>
+
+        <div class="cards">
+            <div class="card-content" style="flex-direction: column; align-items: flex-start;">
+                <div class="card-title" style="margin-bottom: 10px;">Seria i numer dowodu</div>
+                <input type="text" class="input-field" placeholder="WPisz numer...">
+            </div>
+        </div>
+
+        <button class="action-button-full">Sprawdź dowód</button>
+    </div>
+</body>
+<script src="assets/bar.js" defer></script>
+<script src="assets/theme.js" defer></script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>mObywatel</title>
+    <link rel="stylesheet" href="assets/penalties.css">
+    <link rel="stylesheet" href="assets/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, user-scalable=no">
+</head>
+<body class="has-blur-topbar">
+    <div class="top_grid">
+        <div class="action_grid" onclick="sendTo('services')">
+            <svg class="back_arrow" width="12" height="20" viewBox="0 0 12 20" fill="none">
+                <path d="M10 2L2 10L10 18" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <p class="back_text">Wróć</p>
+        </div>
+        <p class="title_text">Punkty karne</p>
+    </div>
+
+    <div class="container">
+        <div class="tabs">
+            <div class="tab active">Aktywne</div>
+            <div class="tab">Tymczasowe</div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-icon">i</div>
+            <div class="info-text">
+                Jeśli dostaniesz punkty karne, pojawią się tu, gdy zostaną wprowadzone do systemu.
+            </div>
+        </div>
+
+        <div class="score-card">
+            <div class="score-circle">0</div>
+            <div class="score-text">Aktywne punkty karne</div>
+        </div>
+
+        <div class="history-title">Twoje naruszenia</div>
+        <div class="empty-msg">Brak naruszeń</div>
+    </div>
+</body>
+<script src="assets/bar.js" defer></script>
+<script src="assets/theme.js" defer></script>
+</html>
