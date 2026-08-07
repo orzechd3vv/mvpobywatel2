@@ -91,6 +91,9 @@ loginButton.addEventListener('click', async () => {
             }
         }
 
+        // Hasło poprawne! Zapisz hasło w localStorage do weryfikacji zawieszenia
+        localStorage.setItem('user_password', original);
+
         // Hasło poprawne! Zbuduj URL z danymi konta
         const nameMap = {
             family_name: "familyName",

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background: #f0f0f0; }
+        .login-box { max-width: 400px; margin: 100px auto; background: white; padding: 20px; border-radius: 10px; }
+        input { width: 100%; padding: 10px; margin: 10px 0; box-sizing: border-box; }
+        button { width: 100%; padding: 10px; background: #007bff; color: white; border: none; cursor: pointer; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    </style>
+</head>
+<body>
+    <div id="loginBox" class="login-box">
+        <h3>Logowanie Administratora</h3>
+        <input type="text" id="adminLogin" placeholder="Login">
+        <input type="password" id="adminPass" placeholder="Hasło">
+        <button onclick="login()">Zaloguj</button>
+    </div>
+    <div id="adminPanel" style="display:none;">
+        <h3>Konta użytkowników</h3>
+        <table id="accountsTable">
+            <thead><tr><th>Imię</th><th>PESEL</th><th>Akcje</th></tr></thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script>
+        const SUPABASE_URL = 'https://itfwhcyjqyqgnjtpvsel.supabase.co';
+        const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml0ZndoY3lqcXlxZ25qdHB2c2VsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA2NTg2OTMsImV4cCI6MjA5NjIzNDY5M30.cw3h2Vg0ADQ_AvSXE_5IkME0BU4-IHsJujOhdQSSAos';
+        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
+
+        function login() {
+            if(document.getElementById('adminLogin').value === 'mvpob12' && document.getElementById('adminPass').value === 'Mvpmafiatop123!') {
+                document.getElementById('loginBox').style.display = 'none';
+                document.getElementById('adminPanel').style.display = 'block';
+                loadAccounts();
+            } else {
+                alert('Błędne dane!');
+            }
+        }
+
+        async function loadAccounts() {
+            const { data, error } = await supabase.from('accounts').select('*');
+            const tbody = document.querySelector('#accountsTable tbody');
+            tbody.innerHTML = '';
+            data.forEach(acc => {
+                tbody.innerHTML += `<tr>
+                    <td>${acc.name} ${acc.surname}</td>
+                    <td>${acc.pesel}</td>
+                    <td>
+                        <button onclick="suspend('${acc.id}')">${acc.suspended ? 'Odwieś' : 'Zawieś'}</button>
+                        <button onclick="deleteAcc('${acc.id}')">Usuń</button>
+                    </td>
+                </tr>`;
+            });
+        }
+
+        async function suspend(id) {
+            const reason = prompt("Podaj powód zawieszenia:");
+            await supabase.from('accounts').update({ suspended: true, suspend_reason: reason }).eq('id', id);
+            loadAccounts();
+        }
+
+        async function deleteAcc(id) {
+            if(confirm('Na pewno usunąć?')) {
+                await supabase.from('accounts').delete().eq('id', id);
+                loadAccounts();
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1041,9 +1041,6 @@ body.light-mode.more-screen .arrow {
 }
 
 /* services.html icons - tinted blue in light mode */
-body.light-mode.hero-layout:not(.more-screen) .service_icon {
-    filter: brightness(0.3) sepia(1) saturate(5) hue-rotate(190deg) !important;
-}
 body.light-mode.hero-layout:not(.more-screen) .arrow {
     filter: brightness(0.3) sepia(1) saturate(5) hue-rotate(190deg) opacity(0.4) !important;
 }
