@@ -25,6 +25,11 @@ var ROUTES = {
     business: 'business.html',
     tickets: 'tickets.html',
     recepty: 'recepty.html',
+    request_service: 'request_service.html',
+    my_cases: 'my_cases.html',
+    collect_id: 'collect_id.html',
+    elections: 'elections.html',
+    driver_license: 'driver_license.html',
 };
 
 function sendTo(key){
