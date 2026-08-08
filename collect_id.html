@@ -3,33 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <title>mObywatel</title>
-    <link rel="stylesheet" href="assets/service_page.css">
+    <link rel="stylesheet" href="assets/collect_id.css">
     <link rel="stylesheet" href="assets/main.css">
+    <link rel="icon" type="image/x-icon" href="https://i.imgur.com/U7TRg0V.png">
+    <link rel="apple-touch-icon" href="https://i.imgur.com/U7TRg0V.png">
+    <link rel="shortcut icon" href="https://i.imgur.com/U7TRg0V.png">
+    <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=0.8, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
 </head>
 <body class="has-blur-topbar">
+    <div class="bottom_bar">
+        <div class="bottom_bar_grid">
+            <div class="bottom_element_grid" send="home">
+                <div class="bottom_element_image home"></div>
+                <p class="bottom_element_text">Dokumenty</p>
+            </div>
+            <div class="bottom_element_grid" send="services">
+                <div class="bottom_element_image services_open services"></div>
+                <p class="bottom_element_text open">Usługi</p>
+            </div>
+            <div class="bottom_element_grid" send="qr">
+                <div class="bottom_element_image qr"></div>
+                <p class="bottom_element_text">Kod QR</p>
+            </div>
+            <div class="bottom_element_grid" send="more">
+                <div class="bottom_element_image more"></div>
+                <p class="bottom_element_text">Więcej</p>
+            </div>
+        </div>
+    </div>
+
     <div class="top_grid">
         <div class="action_grid" onclick="sendTo('services')">
-            <svg width="12" height="20" viewBox="0 0 12 20" fill="none"><path d="M10 2L2 10L10 18" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="back_arrow" width="12" height="20" viewBox="0 0 12 20" fill="none">
+                <path d="M10 2L2 10L10 18" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
             <p class="back_text">Wróć</p>
         </div>
         <p class="title_text">Odbiór dowodu</p>
     </div>
 
-    <div class="container" style="padding-top: 80px;">
-        <div class="icon-circle" style="background: #dbeafe;"><img src="./services_files/collect_id.png" style="width: 50px; height: 50px;"></div>
-        <div class="title" style="margin-bottom: 10px;">Sprawdź, czy dowód osobisty jest gotowy</div>
-        <div class="subtitle" style="margin-bottom: 30px;">Zwykle nowy dowód jest gotowy do odbioru w ciągu 30 dni.</div>
+    <div class="container">
+        <div class="icon-section">
+            <div class="icon-circle">
+                <img src="./services_files/collect_id.png" alt="Odbiór dowodu" style="width: 50px; height: 50px;">
+            </div>
+        </div>
 
-        <div class="cards" style="padding: 20px;">
-            <div class="form-group">
-                <label style="color:#888; font-size:14px;">Numer wniosku o dowód</label>
+        <div class="titleall">
+            <div class="title">Sprawdź, czy dowód<br>osobisty jest gotowy</div>
+            <div class="subtitle">Zwykle nowy dowód jest gotowy do odbioru w ciągu 30 dni.</div>
+        </div>
+
+        <div class="cards">
+            <div class="card-content">
+                <div class="card-title">Numer wniosku o dowód</div>
                 <input type="text" class="input-field" placeholder="">
             </div>
         </div>
-        <button class="action-button-full">Sprawdź</button>
+
+        <button class="action-button-full" id="checkBtn">Sprawdź</button>
+    </div>
+
+    <!-- ERROR POPUP -->
+    <div id="errorPopup" class="error_popup_hidden">
+        <div class="popup_box">
+            <p class="popup_title">Coś poszło nie tak...</p>
+            <p class="popup_desc">
+                Wygląda na to że wystąpił błąd z połączeniem z siecią, spróbuj ponownie później.
+            </p>
+            <button id="popupClose">Rozumiem</button>
+        </div>
     </div>
 </body>
 <script src="assets/bar.js" defer></script>
 <script src="assets/theme.js" defer></script>
+<script src="assets/manifest.js"></script>
+<script>
+    document.getElementById("checkBtn").addEventListener("click", () => {
+        document.getElementById("errorPopup").classList.remove("error_popup_hidden");
+    });
+    document.getElementById("popupClose").addEventListener("click", () => {
+        document.getElementById("errorPopup").classList.add("error_popup_hidden");
+    });
+</script>
 </html>
