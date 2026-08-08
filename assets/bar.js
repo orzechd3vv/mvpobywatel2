@@ -24,6 +24,7 @@ var ROUTES = {
     penalties: 'penalties.html',
     business: 'business.html',
     tickets: 'tickets.html',
+    recepty: 'recepty.html',
 };
 
 function sendTo(key){
