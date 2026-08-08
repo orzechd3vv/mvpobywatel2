@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>mObywatel</title>
+    <link rel="stylesheet" href="assets/service_page.css">
+    <link rel="stylesheet" href="assets/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, user-scalable=no">
+</head>
+<body class="has-blur-topbar">
+    <div class="top_grid">
+        <div class="action_grid" onclick="sendTo('services')">
+            <svg width="12" height="20" viewBox="0 0 12 20" fill="none"><path d="M10 2L2 10L10 18" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <p class="back_text">Wróć</p>
+        </div>
+        <p class="title_text">Wybory</p>
+    </div>
+
+    <div class="container" style="padding-top: 80px;">
+        <div class="icon-circle" style="background: #dbeafe;"><img src="./services_files/elections.png" style="width: 50px; height: 50px;"></div>
+        <div class="title">Masz czynne prawo wyborcze</div>
+        
+        <div class="subtitle" style="font-weight: 600; color: white;">Zaplanowane wybory</div>
+        <div class="cards">
+            <div class="card">
+                <div class="card-content">
+                    <div>
+                        <div class="card-title">Wybory Prezydenta Rzeczypospolitej Polskiej</div>
+                        <div class="card-desc">18.05.2025</div>
+                    </div>
+                    <div class="card-arrow">›</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="subtitle" style="font-weight: 600; color: white;">Pozostałe dane</div>
+        <div class="cards">
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-title">Twoje dane w rejestrze</div>
+                    <div class="card-arrow">›</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="assets/bar.js" defer></script>
+<script src="assets/theme.js" defer></script>
+</html>

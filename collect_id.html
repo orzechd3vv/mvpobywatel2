@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>mObywatel</title>
+    <link rel="stylesheet" href="assets/service_page.css">
+    <link rel="stylesheet" href="assets/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, user-scalable=no">
+</head>
+<body class="has-blur-topbar">
+    <div class="top_grid">
+        <div class="action_grid" onclick="sendTo('services')">
+            <svg width="12" height="20" viewBox="0 0 12 20" fill="none"><path d="M10 2L2 10L10 18" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <p class="back_text">Wróć</p>
+        </div>
+        <p class="title_text">Odbiór dowodu</p>
+    </div>
+
+    <div class="container" style="padding-top: 80px;">
+        <div class="icon-circle" style="background: #dbeafe;"><img src="./services_files/collect_id.png" style="width: 50px; height: 50px;"></div>
+        <div class="title" style="margin-bottom: 10px;">Sprawdź, czy dowód osobisty jest gotowy</div>
+        <div class="subtitle" style="margin-bottom: 30px;">Zwykle nowy dowód jest gotowy do odbioru w ciągu 30 dni.</div>
+
+        <div class="cards" style="padding: 20px;">
+            <div class="form-group">
+                <label style="color:#888; font-size:14px;">Numer wniosku o dowód</label>
+                <input type="text" class="input-field" placeholder="">
+            </div>
+        </div>
+        <button class="action-button-full">Sprawdź</button>
+    </div>
+</body>
+<script src="assets/bar.js" defer></script>
+<script src="assets/theme.js" defer></script>
+</html>

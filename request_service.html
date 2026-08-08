@@ -4,40 +4,40 @@
     <meta charset="UTF-8">
     <title>mObywatel</title>
     <link rel="stylesheet" href="assets/service_page.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 </head>
-<body class="has-blur-topbar">
+<body class="light-mode"> <!-- Wymuszam jasny motyw dla 1:1 ze screenami -->
     <div class="top_grid">
         <div class="action_grid" onclick="sendTo('services')">
-            <svg width="12" height="20" viewBox="0 0 12 20" fill="none"><path d="M10 2L2 10L10 18" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <p class="back_text">Usługi</p>
+            <p class="back_text">< Wróć</p>
         </div>
         <p class="title_text">Załatw sprawę</p>
     </div>
 
     <div class="container">
-        <div class="icon-circle"><img src="./services_files/finish_case.png" style="width:40px;"></div>
-        <div class="title">Załatwiaj sprawy<br>urzędowe online</div>
-        <div class="subtitle">Złóż wniosek w aplikacji – szybko i wygodnie.</div>
+        <div class="icon-circle" style="background:#e0e7ff; margin-bottom:20px;">
+            <img src="./services_files/finish_case.png" style="width:40px;">
+        </div>
+        <h1 class="title">Załatwiaj sprawy<br>urzędowe online</h1>
+        <p class="subtitle">Złóż wniosek w aplikacji – szybko i wygodnie.</p>
         
         <div class="cards">
             <div class="card">
                 <div class="card-icon"><img src="./services_files/check_id.png" style="width:24px;"></div>
-                <div class="card-title">Dowód osobisty</div>
-                <div class="card-arrow">›</div>
+                <div class="card-content">
+                    <div class="card-title">Dowód osobisty</div>
+                    <div class="card-arrow">›</div>
+                </div>
             </div>
+            <div class="card-divider"></div>
             <div class="card">
                 <div class="card-icon"><img src="./services_files/plane.png" style="width:24px;"></div>
-                <div class="card-title">Paszport</div>
-                <div class="card-arrow">›</div>
-            </div>
-            <div class="card">
-                <div class="card-icon"><img src="./services_files/health.png" style="width:24px;"></div>
-                <div class="card-title">Rodzina</div>
-                <div class="card-arrow">›</div>
+                <div class="card-content">
+                    <div class="card-title">Paszport</div>
+                    <div class="card-arrow">›</div>
+                </div>
             </div>
         </div>
     </div>
 </body>
-<script src="assets/bar.js" defer></script>
 </html>

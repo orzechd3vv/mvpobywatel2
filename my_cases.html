@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>mObywatel</title>
+    <link rel="stylesheet" href="assets/service_page.css">
+    <link rel="stylesheet" href="assets/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, user-scalable=no">
+</head>
+<body class="has-blur-topbar">
+    <div class="bottom_bar">
+        <div class="bottom_bar_grid">
+            <div class="bottom_element_grid" send="home"><div class="bottom_element_image home"></div><p>Dokumenty</p></div>
+            <div class="bottom_element_grid" send="services"><div class="bottom_element_image services_open services"></div><p class="open">Usługi</p></div>
+            <div class="bottom_element_grid" send="qr"><div class="bottom_element_image qr"></div><p>Kod QR</p></div>
+            <div class="bottom_element_grid" send="more"><div class="bottom_element_image more"></div><p>Więcej</p></div>
+        </div>
+    </div>
+    <div class="top_grid">
+        <div class="action_grid" onclick="sendTo('services')">
+            <svg width="12" height="20" viewBox="0 0 12 20" fill="none"><path d="M10 2L2 10L10 18" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <p class="back_text">Wróć</p>
+        </div>
+        <p class="title_text">Twoje sprawy</p>
+    </div>
+
+    <div class="container" style="padding-top: 80px;">
+        <div class="info-box" style="background:#e0f2fe; color:#075985;">
+            <div class="info-icon" style="background:#3b82f6;">i</div>
+            <div class="info-text">Obecnie w aplikacji możesz zobaczyć tylko wybrane sprawy. Pracujemy nad udostępnieniem podglądu kolejnych spraw.</div>
+        </div>
+        <div class="history-title" style="color:white; margin-bottom:15px;">Dzisiaj, 01.07.2025</div>
+        <div class="cards">
+            <div class="card">
+                <div class="card-content">
+                    <div style="width:10px; height:10px; border-radius:50%; background:green; margin-right:10px;"></div>
+                    <div class="card-title">Wniosek o dopisanie do spisu wyborców</div>
+                    <div class="card-arrow">›</div>
+                </div>
+                <div class="card-desc" style="padding:0 20px 15px 20px;">Data zmiany statusu: 27.06.2025</div>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card">
+                <div class="card-content">
+                    <div style="width:10px; height:10px; border-radius:50%; background:green; margin-right:10px;"></div>
+                    <div class="card-title">Wniosek o dowód dla dziecka lub podopiecznego</div>
+                    <div class="card-arrow">›</div>
+                </div>
+                <div class="card-desc" style="padding:0 20px 15px 20px;">Data zmiany statusu: 20.06.2025</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="assets/bar.js" defer></script>
+<script src="assets/theme.js" defer></script>
+</html>
