@@ -1,24 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjoiIiwic2hvcnRfbmFtZSI6IiIsInRoZW1lX2NvbG9yIjoiIzEwMTMxNyIsImJhY2tncm91bmRfY29sb3IiOiIjMTAxMzE3IiwiZGlzcGxheSI6InN0YW5kYWxvbmUifQ==">
+    <meta charset="UTF-8">
     <title>mObywatel</title>
-    
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <link rel="stylesheet" href="assetsdiff/main.css?v=3">
-    <link rel="stylesheet" href="assetsdiff/flow.css">
-    <link rel="stylesheet" href="more_files/appearance.css">
+    <link rel="stylesheet" href="assets/check_id.css">
+    <link rel="stylesheet" href="assets/main.css?v=3">
     <link rel="icon" type="image/x-icon" href="https://i.imgur.com/U7TRg0V.png">
     <link rel="apple-touch-icon" href="https://i.imgur.com/U7TRg0V.png">
     <link rel="shortcut icon" href="https://i.imgur.com/U7TRg0V.png">
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=0.8, user-scalable=no">
     <meta name="mobile-web-app-capable" content="yes">
+    <style>
+        .appearance-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        .theme-radio {
+            display: none;
+        }
+        .appearance-option {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            padding: 0;
+        }
+        .appearance-option .card-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            gap: 12px;
+        }
+        .radio-custom {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            border: 2px solid var(--card-border, #3b82f6);
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-radio:checked + .radio-custom {
+            background: #3b82f6;
+            border-color: #3b82f6;
+        }
+        .theme-radio:checked + .radio-custom::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: white;
+        }
+        .option-title {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--font);
+            margin: 0;
+        }
+        .option-description {
+            font-size: 13px;
+            color: var(--text, #888);
+            margin: 2px 0 0 0;
+        }
+    </style>
 </head>
-<body class="has-blur-topbar hero-layout">
+<body class="has-blur-topbar">
     <script src="assets/clear_cache.js"></script>
 
     <div class="bottom_bar">
@@ -46,62 +96,118 @@
         </div>
     </div>
 
-    <div class="top_slide_bar">
-        <img class="main_page_logo" src="./more_files/logo_large.png">
-        <p class="main_title">Wygląd</p>
-        <p class="main_button" onclick="sendTo('more')">← Wróć</p>
-    </div>
-
-    <header class="hero-header" data-hero data-hero-collapse-offset="24">
-        <div class="hero-header__row">
-            <div class="hero-header__logo">
-                <img src="./more_files/logo_large.png" alt="Godło" />
-            </div>
-            <div class="hero-header__texts">
-                <p class="hero-header__title">Wygląd</p>
-                <p class="hero-header__subtitle">Wybierz motyw</p>
-            </div>
+    <div class="top_grid">
+        <div class="action_grid" onclick="sendTo('more')">
+            <svg class="back_arrow" width="12" height="20" viewBox="0 0 12 20" fill="none">
+                <path d="M10 2L2 10L10 18" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <p class="back_text">Więcej</p>
         </div>
-    </header>
+        <p class="title_text">Wygląd</p>
+    </div>
 
     <div class="container">
-        <p class="title">Wygląd</p>
-        
-        <div class="appearance-options">
-            <!-- Light Mode -->
-            <label class="appearance-option">
-                <input type="radio" name="theme" value="light" class="theme-radio">
-                <div class="radio-custom"></div>
-                <div class="option-content">
-                    <p class="option-title">Tryb jasny</p>
-                </div>
-            </label>
+        <div class="icon-section">
+            <div class="icon-circle">
+                <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"/>
+                    <line x1="12" y1="1" x2="12" y2="3"/>
+                    <line x1="12" y1="21" x2="12" y2="23"/>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                    <line x1="1" y1="12" x2="3" y2="12"/>
+                    <line x1="21" y1="12" x2="23" y2="12"/>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                </svg>
+            </div>
+        </div>
 
-            <!-- Dark Mode -->
-            <label class="appearance-option">
-                <input type="radio" name="theme" value="dark" class="theme-radio">
-                <div class="radio-custom"></div>
-                <div class="option-content">
-                    <p class="option-title">Tryb ciemny</p>
-                </div>
-            </label>
+        <div class="titleall">
+            <div class="title">Wygląd<br>aplikacji</div>
+            <div class="subtitle">Wybierz motyw kolorystyczny aplikacji mObywatel</div>
+        </div>
 
-            <!-- Automatic Mode -->
-            <label class="appearance-option">
-                <input type="radio" name="theme" value="auto" class="theme-radio">
-                <div class="radio-custom"></div>
-                <div class="option-content">
-                    <p class="option-title">Automatyczny</p>
-                    <p class="option-description">Wygląd dopasowany do motywu wyświetlacza urządzenia</p>
-                </div>
-            </label>
+        <div class="cards">
+            <div class="appearance-options">
+                <!-- Tryb jasny -->
+                <label class="appearance-option card">
+                    <input type="radio" name="theme" value="light" class="theme-radio">
+                    <div class="card-content">
+                        <input type="radio" name="theme" value="light" class="theme-radio" style="display:none">
+                        <div class="radio-custom"></div>
+                        <div class="card-text" style="flex:1">
+                            <div class="option-title">Tryb jasny</div>
+                        </div>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"/>
+                            <line x1="12" y1="1" x2="12" y2="3"/>
+                            <line x1="12" y1="21" x2="12" y2="23"/>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                            <line x1="1" y1="12" x2="3" y2="12"/>
+                            <line x1="21" y1="12" x2="23" y2="12"/>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                        </svg>
+                    </div>
+                </label>
+
+                <div class="card-divider"></div>
+
+                <!-- Tryb ciemny -->
+                <label class="appearance-option card">
+                    <input type="radio" name="theme" value="dark" class="theme-radio">
+                    <div class="card-content">
+                        <div class="radio-custom"></div>
+                        <div class="card-text" style="flex:1">
+                            <div class="option-title">Tryb ciemny</div>
+                        </div>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        </svg>
+                    </div>
+                </label>
+
+                <div class="card-divider"></div>
+
+                <!-- Automatyczny -->
+                <label class="appearance-option card">
+                    <input type="radio" name="theme" value="auto" class="theme-radio">
+                    <div class="card-content">
+                        <div class="radio-custom"></div>
+                        <div class="card-text" style="flex:1">
+                            <div class="option-title">Automatyczny</div>
+                            <div class="option-description">Dopasowany do motywu urządzenia</div>
+                        </div>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </div>
+                </label>
+            </div>
         </div>
     </div>
 
-    <script src="assets/hero.js" defer></script>
+    <script>
+        // Wczytaj aktualny motyw
+        const savedTheme = localStorage.getItem('theme') || 'auto';
+        const radio = document.querySelector(`.theme-radio[value="${savedTheme}"]`);
+        if (radio) radio.checked = true;
+
+        // Nasłuchuj zmiany
+        document.querySelectorAll('.theme-radio').forEach(r => {
+            r.addEventListener('change', () => {
+                localStorage.setItem('theme', r.value);
+                applyTheme(r.value);
+            });
+        });
+    </script>
+
     <script src="assets/bar.js?v=3" defer></script>
     <script src="assets/theme.js?v=3" defer></script>
     <script src="assets/manifest.js"></script>
-    <script src="assetsdiff/flow.js.pobrane"></script>
 </body>
 </html>
