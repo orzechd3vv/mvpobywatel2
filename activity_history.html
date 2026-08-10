@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>mObywatel</title>
+    <link rel="stylesheet" href="assets/card.css?v=1.2">
     <link rel="stylesheet" href="assets/main.css?v=3">
-    <link rel="stylesheet" href="assets/check_id.css">
     <link rel="icon" type="image/x-icon" href="https://i.imgur.com/U7TRg0V.png">
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=0.8, user-scalable=no">
@@ -13,13 +13,12 @@
     <script src="assets/clear_cache.js"></script>
 
     <div class="top_grid topbar-always">
-        <div class="action_grid">
-            <svg class="back_arrow" width="12" height="20" viewBox="0 0 12 20" fill="none" style="margin-top:auto;margin-bottom:auto;">
-                <path d="M10 2L2 10L10 18" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <p onclick="sendTo('more')" class="back_text" style="color:#3b82f6;font-weight:500;font-size:18px;cursor:pointer;">Więcej</p>
+        <div class="action_grid" onclick="sendTo('more')">
+            <img src="https://i.imgur.com/aXIO2NG.png" class="back_img">
+            <p class="back_text">Więcej</p>
         </div>
         <p class="title_text">Historia aktywności</p>
+        <img src="https://i.imgur.com/VHNv1TC.png" class="help_img">
     </div>
 
     <div class="bottom_bar">
@@ -47,38 +46,38 @@
         </div>
     </div>
 
-    <div class="container" style="padding-top: 80px; padding-bottom: 140px; width: 90%; margin: 0 auto;">
-        <div style="background: var(--secondary); border-radius: 20px; overflow: hidden; border: 1px solid var(--gray-border); margin-top: 20px;">
-            <div style="padding: 18px 20px; border-bottom: 1px solid var(--gray-border);">
+    <div class="container" style="max-width: 400px; margin: 90px auto 140px;">
+        <div class="card custom-card">
+            <div class="field">
                 <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <p style="font-size: 16px; font-weight: 600; margin: 0;">Zalogowano do aplikacji</p>
-                    <span style="font-size: 12px; color: #8e8e93;" id="today_time_1">Dzisiaj</span>
+                    <strong>Zalogowano do aplikacji</strong>
+                    <label id="today_time_1" style="margin:0;">Dzisiaj</label>
                 </div>
-                <p style="font-size: 13px; color: #8e8e93; margin: 4px 0 0 0;">Poprawna weryfikacja hasła</p>
+                <label style="font-size: 13px; margin-top: 4px;">Poprawna weryfikacja hasła</label>
             </div>
 
-            <div style="padding: 18px 20px; border-bottom: 1px solid var(--gray-border);">
+            <div class="field">
                 <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <p style="font-size: 16px; font-weight: 600; margin: 0;">Wyświetlono mDowód</p>
-                    <span style="font-size: 12px; color: #8e8e93;" id="today_time_2">Dzisiaj</span>
+                    <strong>Wyświetlono mDowód</strong>
+                    <label id="today_time_2" style="margin:0;">Dzisiaj</label>
                 </div>
-                <p style="font-size: 13px; color: #8e8e93; margin: 4px 0 0 0;">Pomyślny odczyt dokumentu cyfrowego</p>
+                <label style="font-size: 13px; margin-top: 4px;">Pomyślny odczyt dokumentu cyfrowego</label>
             </div>
 
-            <div style="padding: 18px 20px; border-bottom: 1px solid var(--gray-border);">
+            <div class="field">
                 <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <p style="font-size: 16px; font-weight: 600; margin: 0;">Sprawdzono status PESEL</p>
-                    <span style="font-size: 12px; color: #8e8e93;">Wczoraj</span>
+                    <strong>Sprawdzono status PESEL</strong>
+                    <label style="margin:0;">Wczoraj</label>
                 </div>
-                <p style="font-size: 13px; color: #8e8e93; margin: 4px 0 0 0;">Status: Zastrzeżony</p>
+                <label style="font-size: 13px; margin-top: 4px;">Status: Zastrzeżony</label>
             </div>
 
-            <div style="padding: 18px 20px;">
+            <div class="field" style="border-bottom: none;">
                 <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <p style="font-size: 16px; font-weight: 600; margin: 0;">Synchronizacja danych</p>
-                    <span style="font-size: 12px; color: #8e8e93;">3 dni temu</span>
+                    <strong>Synchronizacja danych</strong>
+                    <label style="margin:0;">3 dni temu</label>
                 </div>
-                <p style="font-size: 13px; color: #8e8e93; margin: 4px 0 0 0;">Pobrano najnowsze dane konta</p>
+                <label style="font-size: 13px; margin-top: 4px;">Pobrano najnowsze dane konta</label>
             </div>
         </div>
     </div>
