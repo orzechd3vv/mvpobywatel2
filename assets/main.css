@@ -148,10 +148,14 @@ p, input{
 
 .bottom_element_image.search {
     background-image: var(--search) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
 .bottom_element_image.search_open {
     background-image: var(--search-open) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
 .bottom_element_grid{
