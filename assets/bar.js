@@ -47,6 +47,10 @@ var ROUTES = {
     elections: 'elections.html',
     driver_license: 'driver_license.html',
     finish_case: 'finish_case.html',
+    residence_data: 'residence_data.html',
+    change_password: 'change_password.html',
+    app_language: 'app_language.html',
+    activity_history: 'activity_history.html',
 };
 
 function sendTo(key){
