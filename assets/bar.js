@@ -194,5 +194,16 @@ document.addEventListener("DOMContentLoaded", initTopBarEffects);
         window.addEventListener('load', prefetchRoutes);
     }
 })();
-
-
+// -------------------------
+//  🔁 REORDER BOTTOM BAR: Szukaj before Więcej
+// -------------------------
+document.addEventListener("DOMContentLoaded", function() {
+    var grid = document.querySelector('.bottom_bar_grid');
+    if (!grid) return;
+    var searchEl = grid.querySelector('[send="search"]');
+    var moreEl   = grid.querySelector('[send="more"]');
+    if (searchEl && moreEl && moreEl.compareDocumentPosition(searchEl) & Node.DOCUMENT_POSITION_FOLLOWING) {
+        // search is currently AFTER more — move it before
+        grid.insertBefore(searchEl, moreEl);
+    }
+});
