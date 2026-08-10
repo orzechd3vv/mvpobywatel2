@@ -135,3 +135,30 @@
     margin-right: auto;
     display: block;
 }
+
+/* Light Mode Support */
+body.light-mode .show_title {
+    color: #111111;
+}
+body.light-mode .show_description {
+    color: #555558;
+}
+body.light-mode .frame {
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+body.light-mode .numbers {
+    color: #111111;
+}
+body.light-mode .loading {
+    background-color: #e0e0e0;
+}
+body.light-mode .expire {
+    color: #555558;
+}
+body.light-mode .expire_light {
+    color: #555558;
+}
+body.light-mode .expire_highlight {
+    color: #111111;
+}

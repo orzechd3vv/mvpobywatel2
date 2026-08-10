@@ -661,3 +661,28 @@ body {
 .code-input-field[type=number] {
     -moz-appearance: textfield;
 } 
+
+/* Light Mode Support */
+body.light-mode .description {
+    color: #555558;
+}
+body.light-mode .manual-input {
+    background-color: #ffffff;
+    color: #111111;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+body.light-mode .code-input-box {
+    background-color: #ffffff;
+    color: #111111;
+}
+body.light-mode .code-input-title {
+    color: #111111;
+}
+body.light-mode .code-input-subtitle {
+    color: #555558;
+}
+body.light-mode .code-input-field {
+    background-color: #f5f6f8;
+    color: #111111;
+    border: 1px solid #d0d4dc;
+} 
