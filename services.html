@@ -23,30 +23,30 @@
         <div class="bottom_bar_grid">
             <div class="bottom_element_grid" send="home">
                 <div class="bottom_element_image home_open home"></div>
-                <p class="bottom_element_text open">Dokumenty</p>
+                <p class="bottom_element_text open" data-i18n="nav.documents">Dokumenty</p>
             </div>
             <div class="bottom_element_grid" send="services">
                 <div class="bottom_element_image services"></div>
-                <p class="bottom_element_text">Usługi</p>
+                <p class="bottom_element_text" data-i18n="nav.services">Usługi</p>
             </div>
             <div class="bottom_element_grid" send="qr">
                 <div class="bottom_element_image qr"></div>
-                <p class="bottom_element_text">Kod QR</p>
+                <p class="bottom_element_text" data-i18n="nav.qr">Kod QR</p>
             </div>
             <div class="bottom_element_grid" send="more">
                 <div class="bottom_element_image more"></div>
-                <p class="bottom_element_text">Więcej</p>
+                <p class="bottom_element_text" data-i18n="nav.more">Więcej</p>
             </div>
             <div class="bottom_element_grid" send="search">
                 <div class="bottom_element_image search"></div>
-                <p class="bottom_element_text">Szukaj</p>
+                <p class="bottom_element_text" data-i18n="nav.search">Szukaj</p>
             </div>
         </div>
     </div>
 
     <div class="top_slide_bar">
         <img class="main_page_logo" src="./services_files/logo_large.png">
-        <p class="main_title">Usługi</p>
+        <p class="main_title" data-i18n="services.title">Usługi</p>
     </div>
     <header class="hero-header hero-header--services" data-hero data-hero-collapse-offset="28">
         <div class="hero-header__row">
@@ -54,7 +54,7 @@
                 <img src="./services_files/logo_large.png" alt="Godło" />
             </div>
             <div class="hero-header__texts">
-                <p class="hero-header__title">Usługi</p>
+                <p class="hero-header__title" data-i18n="services.title">Usługi</p>
             </div>
         </div>
         <label class="hero-search" for="serviceSearch">
@@ -64,175 +64,175 @@
                     <line x1="21" y1="21" x2="16.65" y2="16.65"/>
                 </svg>
             </span>
-            <input id="serviceSearch" data-service-search type="search" inputmode="search" placeholder="Szukaj" autocomplete="off" spellcheck="false" />
+            <input id="serviceSearch" data-service-search type="search" inputmode="search" placeholder="Szukaj" data-i18n="services.search" autocomplete="off" spellcheck="false" />
         </label>
     </header>
-    <p class="search-empty" data-search-empty>Brak wyników</p>
+    <p class="search-empty" data-search-empty data-i18n="services.no_results">Brak wyników</p>
     <div class="container">
         <section class="service-section" data-service-section>
             <div class="services_action">
-                <p class="title">Ulubione</p>
-                <p class="main_button">Dostosuj</p>
+                <p class="title" data-i18n="services.favorites">Ulubione</p>
+                <p class="main_button" data-i18n="services.customize">Dostosuj</p>
             </div>
             <div class="services_list" style="margin-top: 10px;">
             <div class="service">
                 <img class="service_icon" src="./services_files/sign_document.png">
-                <p class="service_name">Podpisz dokument</p>
+                <p class="service_name" data-i18n="services.sign_doc">Podpisz dokument</p>
                 <img class="arrow" src="./services_files/right_arrow_sharp.png">
             </div>
             <div class="service" onclick="sendTo('safe_in_web')">
                 <img class="service_icon" src="./services_files/safe_in_web.png">
-                <p class="service_name">Bezpiecznie w sieci</p>
+                <p class="service_name" data-i18n="services.safe_web">Bezpiecznie w sieci</p>
                 <img class="arrow" src="./services_files/right_arrow_sharp.png">
             </div>
             <div class="service" onclick="sendTo('flood')">
                 <img class="service_icon" src="./services_files/flood.png">
-                <p class="service_name">Alert powodziowy</p>
+                <p class="service_name" data-i18n="services.flood">Alert powodziowy</p>
                 <img class="arrow" src="./services_files/right_arrow_sharp.png">
             </div>
             <div class="service" onclick="sendTo('pesel_status')">
                 <img class="service_icon" src="./services_files/pesel.png">
-                <p class="service_name">Zastrzeż PESEL</p>
+                <p class="service_name" data-i18n="services.pesel_reserve">Zastrzeż PESEL</p>
                 <img class="arrow" src="./services_files/right_arrow_sharp.png">
             </div>
             <div class="service" onclick="sendTo('business')">
                 <img class="service_icon" src="./services_files/business.png">
-                <p class="service_name">Firma</p>
+                <p class="service_name" data-i18n="services.company">Firma</p>
                 <img class="arrow" src="./services_files/right_arrow_sharp.png">
             </div>
             <div class="service" onclick="sendTo('penalties')">
                 <img class="service_icon" src="./services_files/penalties.png">
-                <p class="service_name">Punkty karne</p>
+                <p class="service_name" data-i18n="services.penalty_points">Punkty karne</p>
                 <img class="arrow" src="./services_files/right_arrow_sharp.png">
             </div>
             <div class="service" onclick="sendTo('tickets')">
                 <img class="service_icon" src="./services_files/tickets.png">
-                <p class="service_name">Mandaty</p>
+                <p class="service_name" data-i18n="services.tickets">Mandaty</p>
                 <img class="arrow" src="./services_files/right_arrow_sharp.png">
             </div>
             </div>
         </section>
         <section class="service-section" data-service-section>
-            <p class="title">Ochrona danych</p>
+            <p class="title" data-i18n="services.data_protection">Ochrona danych</p>
             <div class="services_list">
             <div class="service" onclick="sendTo('check_id')">
                 <img class="service_icon" src="./services_files/check_id.png">
-                <p class="service_name">Sprawdź dowód</p>
+                <p class="service_name" data-i18n="services.check_id">Sprawdź dowód</p>
                 <img class="arrow" src="./services_files/right_arrow_sharp.png">
             </div>
             <div class="service" onclick="sendTo('check_pesel')">
                 <img class="service_icon" src="./services_files/check_pesel.png">
-                <p class="service_name">Sprawdź PESEL</p>
+                <p class="service_name" data-i18n="services.check_pesel">Sprawdź PESEL</p>
                 <img class="arrow" src="./services_files/right_arrow_sharp.png">
             </div>
             </div>
         </section>
         <section class="service-section" data-service-section>
-            <p class="title">Zdrowie</p>
+            <p class="title" data-i18n="services.health">Zdrowie</p>
             <div class="services_list">
             <div class="service" onclick="sendTo('recepty')">
                 <img class="service_icon" src="./services_files/health.png">
-                <p class="service_name">Recepty</p>
+                <p class="service_name" data-i18n="services.prescriptions">Recepty</p>
                 <img class="arrow" src="./services_files/right_arrow_sharp.png">
             </div>
             <div class="service" style="border: none;">
                 <img class="service_icon" src="./services_files/my_ikp.png">
-                <p class="service_name">mojeIKP</p>
+                <p class="service_name" data-i18n="services.mojeikp">mojeIKP</p>
                 <img class="arrow" src="./services_files/right_arrow_sharp.png">
             </div>
             </div>
         </section>
         <section class="service-section" data-service-section>
-            <p class="title">Sprawy urzędowe</p>
+            <p class="title" data-i18n="services.official">Sprawy urzędowe</p>
             <div class="services_list">
             <div class="service" onclick="sendTo('finish_case')">
                 <img class="service_icon" src="./services_files/finish_case.png">
-                <p class="service_name">Załatw sprawę</p>
+                <p class="service_name" data-i18n="services.handle_case">Załatw sprawę</p>
                 <img class="arrow" src="./services_files/right_arrow_sharp.png">
             </div>
             <div class="service" onclick="sendTo('my_cases')">
                 <img class="service_icon" src="./services_files/your_cases.png">
-                <p class="service_name">Twoje sprawy</p>
+                <p class="service_name" data-i18n="services.your_cases">Twoje sprawy</p>
                 <img class="arrow" src="./services_files/right_arrow_sharp.png">
             </div>
             <div class="service" onclick="sendTo('collect_id')">
                 <img class="service_icon" src="./services_files/collect_id.png">
-                <p class="service_name">Odbiór dowodu</p>
+                <p class="service_name" data-i18n="services.collect_id">Odbiór dowodu</p>
                 <img class="arrow" src="./services_files/right_arrow_sharp.png">
             </div>
             <div class="service" style="border: none;">
                 <img class="service_icon" src="./services_files/e_visit.png">
-                <p class="service_name">E-wizyta w ZUS</p>
+                <p class="service_name" data-i18n="services.ezus">E-wizyta w ZUS</p>
                 <img class="arrow" src="./services_files/right_arrow_sharp.png">
             </div>
             <div class="service" onclick="sendTo('elections')">
                 <img class="service_icon" src="./services_files/elections.png">
-                <p class="service_name">Wybory</p>
+                <p class="service_name" data-i18n="services.elections">Wybory</p>
                 <img class="arrow" src="./services_files/right_arrow_sharp.png">
             </div>
             </div>
         </section>
         <section class="service-section" data-service-section>
-            <p class="title">Kierowca i pojazdy</p>
+            <p class="title" data-i18n="services.driver">Kierowca i pojazdy</p>
             <div class="services_list">
             <div class="service" onclick="sendTo('driver_license')">
                 <img class="service_icon" src="./services_files/driver.png">
-                <p class="service_name">Uprawnienia kierowcy</p>
+                <p class="service_name" data-i18n="services.driver_license">Uprawnienia kierowcy</p>
                 <img class="arrow" src="./services_files/right_arrow_sharp.png">
             </div>
             <div class="service" style="border: none;">
                 <img class="service_icon" src="./services_files/vehicle.png">
-                <p class="service_name">Historia pojazdu</p>
+                <p class="service_name" data-i18n="services.vehicle_history">Historia pojazdu</p>
                 <img class="arrow" src="./services_files/right_arrow_sharp.png">
             </div>
             </div>
         </section>
         <section class="service-section" data-service-section>
-            <p class="title">Opłaty i podatki</p>
+            <p class="title" data-i18n="services.payments">Opłaty i podatki</p>
             <div class="services_list">
             <div class="service" style="border: none;">
                 <img class="service_icon" src="./services_files/e_payments.png">
-                <p class="service_name">ePłatności</p>
+                <p class="service_name" data-i18n="services.epayments">ePłatności</p>
                 <img class="arrow" src="./services_files/right_arrow_sharp.png">
             </div>
             </div>
         </section>
         <section class="service-section" data-service-section>
-            <p class="title">Środowisko</p>
+            <p class="title" data-i18n="services.environment">Środowisko</p>
             <div class="services_list">
             <div class="service" style="border: none;">
                 <img class="service_icon" src="./services_files/nature.png">
-                <p class="service_name">Naruszenie środowiskowe</p>
+                <p class="service_name" data-i18n="services.env_violation">Naruszenie środowiskowe</p>
                 <img class="arrow" src="./services_files/right_arrow_sharp.png">
             </div>
             <div class="service" style="border: none;">
                 <img class="service_icon" src="./services_files/air.png">
-                <p class="service_name">Jakość powietrza</p>
+                <p class="service_name" data-i18n="services.air_quality">Jakość powietrza</p>
                 <img class="arrow" src="./services_files/right_arrow_sharp.png">
             </div>
             </div>
         </section>
         <section class="service-section" data-service-section>
-            <p class="title">Podróż</p>
+            <p class="title" data-i18n="services.travel">Podróż</p>
             <div class="services_list" style="margin-bottom: 150px;">
             <div class="service" style="border: none;">
                 <img class="service_icon" src="./services_files/bus.png">
-                <p class="service_name">Bezpieczny autobus</p>
+                <p class="service_name" data-i18n="services.safe_bus">Bezpieczny autobus</p>
                 <img class="arrow" src="./services_files/right_arrow_sharp.png">
             </div>
             <div class="service" style="border: none;">
                 <img class="service_icon" src="./services_files/bilkom.png">
-                <p class="service_name">Bilkom</p>
+                <p class="service_name" data-i18n="services.bilkom">Bilkom</p>
                 <img class="arrow" src="./services_files/right_arrow_sharp.png">
             </div>
             <div class="service" style="border: none;">
                 <img class="service_icon" src="./services_files/MKA.png">
-                <p class="service_name">Karta MKA</p>
+                <p class="service_name" data-i18n="services.mka_card">Karta MKA</p>
                 <img class="arrow" src="./services_files/right_arrow_sharp.png">
             </div>
             <div class="service" style="border: none;">
                 <img class="service_icon" src="./services_files/plane.png">
-                <p class="service_name">Polak za granicą</p>
+                <p class="service_name" data-i18n="services.abroad">Polak za granicą</p>
                 <img class="arrow" src="./services_files/right_arrow_sharp.png">
             </div>
             </div>
@@ -242,16 +242,17 @@
     <script src="assets/hero.js" defer></script>
     <script src="assets/bar.js?v=3" defer></script>
     <script src="assets/theme.js?v=3" defer></script>
+    <script src="assets/i18n.js"></script>
     <script src="assets/manifest.js"></script>
     <script src="assetsdiff/flow.js.pobrane"></script>
     <!-- ERROR POPUP -->
 <div id="errorPopup" class="error_popup_hidden">
     <div class="popup_box">
-        <p class="popup_title">Coś poszło nie tak...</p>
-        <p class="popup_desc">
+        <p class="popup_title" data-i18n="services.error_title">Coś poszło nie tak...</p>
+        <p class="popup_desc" data-i18n="services.error_desc">
             Wygląda na to że wystąpił błąd z połączeniem z siecią, spróbuj ponownie później.
         </p>
-        <button id="popupClose">Rozumiem</button>
+        <button id="popupClose" data-i18n="services.error_btn">Rozumiem</button>
     </div>
 </div>
 <style>

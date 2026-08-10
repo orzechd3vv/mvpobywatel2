@@ -21,23 +21,23 @@
         <div class="bottom_bar_grid">
             <div class="bottom_element_grid" send="home">
                 <div class="bottom_element_image home_open home"></div>
-                <p class="bottom_element_text open">Dokumenty</p>
+                <p class="bottom_element_text open" data-i18n="nav.documents">Dokumenty</p>
             </div>
             <div class="bottom_element_grid" send="services">
                 <div class="bottom_element_image services"></div>
-                <p class="bottom_element_text">Usługi</p>
+                <p class="bottom_element_text" data-i18n="nav.services">Usługi</p>
             </div>
             <div class="bottom_element_grid" send="qr">
                 <div class="bottom_element_image qr"></div>
-                <p class="bottom_element_text">Kod QR</p>
+                <p class="bottom_element_text" data-i18n="nav.qr">Kod QR</p>
             </div>
             <div class="bottom_element_grid" send="more">
                 <div class="bottom_element_image more"></div>
-                <p class="bottom_element_text">Więcej</p>
+                <p class="bottom_element_text" data-i18n="nav.more">Więcej</p>
             </div>
             <div class="bottom_element_grid" send="search">
                 <div class="bottom_element_image search"></div>
-                <p class="bottom_element_text">Szukaj</p>
+                <p class="bottom_element_text" data-i18n="nav.search">Szukaj</p>
             </div>
         </div>
     </div>
@@ -46,22 +46,22 @@
         <div class="page_top">
             <img class="main_page_logo" src="./qr_files/logo_large.png">
         </div>
-        <p class="main_title">Kod QR</p>
+        <p class="main_title" data-i18n="qr.title">Kod QR</p>
         <p class="description_qr">Dzięki tej funkcji zalogujesz się do usług w internecie i potwierdzisz cyfrowe dokumenty - zarówno swoje, jak i drugiej osoby.</p>
         <div class="action_grid">
             <div class="action" style="border: none;" onclick="sendTo('scanqr')">
                 <img class="action_image" src="./qr_files/confirm_gray.png">
                 <div class="action_text">
-                    <p class="action_title">Zeskanuj kod QR</p>
-                    <p class="action_subtitle" style="width: 100%;">Zaloguj się do strony internetowej lub potwierdź swój cyfrowy dokument.</p>
+                    <p class="action_title" data-i18n="qr.show">Zeskanuj kod QR</p>
+                    <p class="action_subtitle" style="width: 100%;" data-i18n="qr.show_desc">Zaloguj się do strony internetowej lub potwierdź swój cyfrowy dokument.</p>
                 </div>
                 <img class="arrow" src="./qr_files/right_arrow_sharp.png">
             </div>
             <div class="action" onclick="sendTo('showqr')">
                 <img class="action_image" src="./qr_files/check_gray.png">
                 <div class="action_text">
-                    <p class="action_title">Pokaż kod QR</p>
-                    <p class="action_subtitle" style="width: 90%;">Sprawdź cyfrowy dokument drugiej osoby.</p>
+                    <p class="action_title" data-i18n="qr.scan">Pokaż kod QR</p>
+                    <p class="action_subtitle" style="width: 90%;" data-i18n="qr.scan_desc">Sprawdź cyfrowy dokument drugiej osoby.</p>
                 </div>
                 <img class="arrow" src="./qr_files/right_arrow_sharp.png">
             </div>
@@ -70,5 +70,6 @@
 
     <script src="assets/bar.js?v=3" defer></script>
     <script src="assets/theme.js?v=3" defer></script>
+    <script src="assets/i18n.js"></script>
     <script src="assets/manifest.js"></script>
     </body></html>

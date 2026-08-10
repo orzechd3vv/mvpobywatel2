@@ -9,31 +9,90 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=0.8, user-scalable=no">
     <meta name="mobile-web-app-capable" content="yes">
+    <style>
+        /* Loading overlay */
+        .lang-loading-overlay {
+            position: fixed;
+            inset: 0;
+            background: var(--background, #101317);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease;
+        }
+        .lang-loading-overlay.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .lang-loading-spinner {
+            width: 48px;
+            height: 48px;
+            border: 4px solid rgba(59, 130, 246, 0.2);
+            border-top-color: #3b82f6;
+            border-radius: 50%;
+            animation: langSpin 0.8s linear infinite;
+            margin-bottom: 20px;
+        }
+        @keyframes langSpin {
+            to { transform: rotate(360deg); }
+        }
+        .lang-loading-text {
+            color: var(--font, #ffffff);
+            font-size: 16px;
+            font-weight: 500;
+            opacity: 0.8;
+        }
+
+        /* Active lang card highlight */
+        .lang-item.active .card-title {
+            color: #3b82f6 !important;
+        }
+        .check-icon {
+            color: #3b82f6;
+            font-weight: 700;
+            font-size: 20px;
+            transition: opacity 0.2s;
+        }
+        .check-icon.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
 </head>
 <body class="has-blur-topbar">
     <script src="assets/clear_cache.js"></script>
+
+    <!-- Loading overlay -->
+    <div class="lang-loading-overlay" id="langLoading">
+        <div class="lang-loading-spinner"></div>
+        <p class="lang-loading-text" id="langLoadingText">Zmienianie języka...</p>
+    </div>
 
     <div class="bottom_bar">
         <div class="bottom_bar_grid">
             <div class="bottom_element_grid" send="home">
                 <div class="bottom_element_image home"></div>
-                <p class="bottom_element_text">Dokumenty</p>
+                <p class="bottom_element_text" data-i18n="nav.documents">Dokumenty</p>
             </div>
             <div class="bottom_element_grid" send="services">
                 <div class="bottom_element_image services"></div>
-                <p class="bottom_element_text">Usługi</p>
+                <p class="bottom_element_text" data-i18n="nav.services">Usługi</p>
             </div>
             <div class="bottom_element_grid" send="qr">
                 <div class="bottom_element_image qr"></div>
-                <p class="bottom_element_text">Kod QR</p>
+                <p class="bottom_element_text" data-i18n="nav.qr">Kod QR</p>
             </div>
             <div class="bottom_element_grid" send="more">
                 <div class="bottom_element_image more_open more"></div>
-                <p class="bottom_element_text open">Więcej</p>
+                <p class="bottom_element_text open" data-i18n="nav.more">Więcej</p>
             </div>
             <div class="bottom_element_grid" send="search">
                 <div class="bottom_element_image search"></div>
-                <p class="bottom_element_text">Szukaj</p>
+                <p class="bottom_element_text" data-i18n="nav.search">Szukaj</p>
             </div>
         </div>
     </div>
@@ -43,9 +102,9 @@
             <svg class="back_arrow" width="12" height="20" viewBox="0 0 12 20" fill="none">
                 <path d="M10 2L2 10L10 18" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-            <p class="back_text">Więcej</p>
+            <p class="back_text" data-i18n="nav.more">Więcej</p>
         </div>
-        <p class="title_text">Język aplikacji</p>
+        <p class="title_text" data-i18n="language.title">Język aplikacji</p>
     </div>
 
     <div class="container">
@@ -56,38 +115,41 @@
         </div>
 
         <div class="titleall">
-            <div class="title">Wybierz język<br>aplikacji</div>
-            <div class="subtitle">Zmień preferowany język wyświetlania interfejsu.</div>
+            <div class="title">
+                <span data-i18n="language.header">Wybierz język</span><br>
+                <span data-i18n="language.header2">aplikacji</span>
+            </div>
+            <div class="subtitle" data-i18n="language.desc">Zmień preferowany język wyświetlania interfejsu.</div>
         </div>
 
         <div class="cards">
             <div class="card lang-item" data-lang="pl" style="cursor: pointer;">
                 <div class="card-content">
                     <div class="card-text">
-                        <div class="card-title">Polski</div>
-                        <div class="card-desc">Język domyślny</div>
+                        <div class="card-title" data-i18n="language.pl">Polski</div>
+                        <div class="card-desc" data-i18n="language.pl_desc">Język domyślny</div>
                     </div>
-                    <span class="check-icon" style="color: #3b82f6; font-weight: 700; font-size: 20px;">✓</span>
+                    <span class="check-icon">✓</span>
                 </div>
             </div>
             <div class="card-divider"></div>
             <div class="card lang-item" data-lang="en" style="cursor: pointer;">
                 <div class="card-content">
                     <div class="card-text">
-                        <div class="card-title">English</div>
-                        <div class="card-desc">English language</div>
+                        <div class="card-title" data-i18n="language.en">English</div>
+                        <div class="card-desc" data-i18n="language.en_desc">English language</div>
                     </div>
-                    <span class="check-icon" style="color: #3b82f6; font-weight: 700; font-size: 20px; display: none;">✓</span>
+                    <span class="check-icon hidden">✓</span>
                 </div>
             </div>
             <div class="card-divider"></div>
             <div class="card lang-item" data-lang="ua" style="cursor: pointer;">
                 <div class="card-content">
                     <div class="card-text">
-                        <div class="card-title">Українська</div>
-                        <div class="card-desc">Ukraiński</div>
+                        <div class="card-title" data-i18n="language.ua">Українська</div>
+                        <div class="card-desc" data-i18n="language.ua_desc">Українська мова</div>
                     </div>
-                    <span class="check-icon" style="color: #3b82f6; font-weight: 700; font-size: 20px; display: none;">✓</span>
+                    <span class="check-icon hidden">✓</span>
                 </div>
             </div>
         </div>
@@ -95,7 +157,15 @@
 
     <script src="assets/bar.js?v=3" defer></script>
     <script src="assets/theme.js?v=3" defer></script>
+    <script src="assets/i18n.js"></script>
+    <script src="assets/manifest.js"></script>
     <script>
+        const LOADING_TEXTS = {
+            pl: 'Zmienianie języka...',
+            en: 'Changing language...',
+            ua: 'Зміна мови...'
+        };
+
         document.addEventListener('DOMContentLoaded', function() {
             var items = document.querySelectorAll('.lang-item');
             var savedLang = localStorage.getItem('app_language') || 'pl';
@@ -104,9 +174,11 @@
                 items.forEach(function(item) {
                     var check = item.querySelector('.check-icon');
                     if (item.getAttribute('data-lang') === lang) {
-                        check.style.display = 'block';
+                        check.classList.remove('hidden');
+                        item.classList.add('active');
                     } else {
-                        check.style.display = 'none';
+                        check.classList.add('hidden');
+                        item.classList.remove('active');
                     }
                 });
             }
@@ -116,8 +188,24 @@
             items.forEach(function(item) {
                 item.addEventListener('click', function() {
                     var selected = this.getAttribute('data-lang');
-                    localStorage.setItem('app_language', selected);
-                    updateUI(selected);
+                    if (selected === localStorage.getItem('app_language')) return;
+
+                    // Show loading overlay
+                    var overlay = document.getElementById('langLoading');
+                    var loadingText = document.getElementById('langLoadingText');
+                    loadingText.textContent = LOADING_TEXTS[selected] || LOADING_TEXTS.pl;
+                    overlay.classList.add('visible');
+
+                    // Save and apply after short delay
+                    setTimeout(function() {
+                        localStorage.setItem('app_language', selected);
+                        updateUI(selected);
+                        applyTranslations();
+
+                        setTimeout(function() {
+                            overlay.classList.remove('visible');
+                        }, 500);
+                    }, 900);
                 });
             });
         });

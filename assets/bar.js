@@ -256,7 +256,7 @@ document.addEventListener("DOMContentLoaded", function() {
             '.logout-modal-actions { display: flex; flex-direction: column; gap: 10px; }',
             '.logout-btn-confirm {',
             '  width: 100%; padding: 14px; border: none; border-radius: 16px;',
-            '  background: #ef4444; color: #ffffff;',
+            '  background: #4ba4fe; color: #ffffff;',
             '  font-family: "Poppins", sans-serif; font-size: 16px; font-weight: 600;',
             '  cursor: pointer; transition: background 0.15s ease, transform 0.1s ease;',
             '}',
@@ -274,14 +274,21 @@ document.addEventListener("DOMContentLoaded", function() {
         ].join('\n');
         document.head.appendChild(style);
 
+        var lang = localStorage.getItem('app_language') || 'pl';
+        var LOGOUT_TEXTS = {
+            pl: { question: 'Czy na pewno chcesz si\u0119 wylogowa\u0107?', desc: 'B\u0119dziesz musia\u0142 ponownie wpisa\u0107 has\u0142o, aby uzyska\u0107 dost\u0119p do aplikacji.', confirm: 'Tak, chc\u0119', cancel: 'Nie, anuluj' },
+            en: { question: 'Are you sure you want to log out?', desc: 'You will need to enter your password again to access the app.', confirm: 'Yes, log out', cancel: 'No, cancel' },
+            ua: { question: '\u0412\u0438 \u0432\u043f\u0435\u0432\u043d\u0435\u043d\u0456, \u0449\u043e \u0445\u043e\u0447\u0435\u0442\u0435 \u0432\u0438\u0439\u0442\u0438?', desc: '\u0412\u0430\u043c \u0437\u043d\u043e\u0432\u0443 \u0437\u043d\u0430\u0434\u043e\u0431\u0438\u0442\u044c\u0441\u044f \u0432\u0432\u0435\u0441\u0442\u0438 \u043f\u0430\u0440\u043e\u043b\u044c \u0434\u043b\u044f \u0434\u043e\u0441\u0442\u0443\u043f\u0443 \u0434\u043e \u0437\u0430\u0441\u0442\u043e\u0441\u0443\u043d\u043a\u0443.', confirm: '\u0422\u0430\u043a, \u0432\u0438\u0439\u0442\u0438', cancel: '\u041d\u0456, \u0441\u043a\u0430\u0441\u0443\u0432\u0430\u0442\u0438' }
+        };
+        var lt = LOGOUT_TEXTS[lang] || LOGOUT_TEXTS.pl;
         var modalHTML = [
             '<div id="logout-modal-overlay">',
             '  <div id="logout-modal-card">',
-            '    <p class="logout-modal-title">Czy na pewno chcesz się wylogować?</p>',
-            '    <p class="logout-modal-desc">Będziesz musiał ponownie wpisać hasło, aby uzyskać dostęp do aplikacji.</p>',
+            '    <p class="logout-modal-title">' + lt.question + '</p>',
+            '    <p class="logout-modal-desc">' + lt.desc + '</p>',
             '    <div class="logout-modal-actions">',
-            '      <button class="logout-btn-confirm" id="logoutConfirmBtn">Tak, chcę</button>',
-            '      <button class="logout-btn-cancel" id="logoutCancelBtn">Nie, anuluj</button>',
+            '      <button class="logout-btn-confirm" id="logoutConfirmBtn">' + lt.confirm + '</button>',
+            '      <button class="logout-btn-cancel" id="logoutCancelBtn">' + lt.cancel + '</button>',
             '    </div>',
             '  </div>',
             '</div>'

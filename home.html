@@ -22,23 +22,23 @@
         <div class="bottom_bar_grid">
             <div class="bottom_element_grid" send="home">
                 <div class="bottom_element_image home_open home"></div>
-                <p class="bottom_element_text open">Dokumenty</p>
+                <p class="bottom_element_text open" data-i18n="nav.documents">Dokumenty</p>
             </div>
             <div class="bottom_element_grid" send="services">
                 <div class="bottom_element_image services"></div>
-                <p class="bottom_element_text">Usługi</p>
+                <p class="bottom_element_text" data-i18n="nav.services">Usługi</p>
             </div>
             <div class="bottom_element_grid" send="qr">
                 <div class="bottom_element_image qr"></div>
-                <p class="bottom_element_text">Kod QR</p>
+                <p class="bottom_element_text" data-i18n="nav.qr">Kod QR</p>
             </div>
             <div class="bottom_element_grid" send="more">
                 <div class="bottom_element_image more"></div>
-                <p class="bottom_element_text">Więcej</p>
+                <p class="bottom_element_text" data-i18n="nav.more">Więcej</p>
             </div>
             <div class="bottom_element_grid" send="search">
                 <div class="bottom_element_image search"></div>
-                <p class="bottom_element_text">Szukaj</p>
+                <p class="bottom_element_text" data-i18n="nav.search">Szukaj</p>
             </div>
         </div>
     </div>
@@ -49,18 +49,19 @@
             <img src="https://i.imgur.com/kNEbIY0.png" class="top_image right">
         </div>
         <div class="card_grid">
-            <p class="title">Dokumenty</p>
-            <p class="subtitle">Dostosuj</p>
-            <p class="subtitle">Dodaj</p>
+            <p class="title" data-i18n="home.title">Dokumenty</p>
+            <p class="subtitle" data-i18n="home.customize">Dostosuj</p>
+            <p class="subtitle" data-i18n="home.add">Dodaj</p>
         </div>
         <div class="stack" >
             <div class="card" onclick="sendTo('card')" style="background-image: url('https://i.imgur.com/VkZ6DsQ.png');">
-                <p class="cardcontent">mDowód</p>
+                <p class="cardcontent" data-i18n="home.mdowod">mDowód</p>
                 <img class="logo" src="https://i.imgur.com/hejpCzx.png" alt="Logo">
             </div>
     
     <script src="assets/bar.js?v=3" defer></script>
     <script src="assets/theme.js?v=3" defer></script>
+    <script src="assets/i18n.js"></script>
     <script src="assets/manifest.js"></script>
     <script src="assets/home.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
