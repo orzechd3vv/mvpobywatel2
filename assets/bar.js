@@ -207,3 +207,109 @@ document.addEventListener("DOMContentLoaded", function() {
         grid.insertBefore(searchEl, moreEl);
     }
 });
+
+// -------------------------
+//  🔒 LOGOUT CONFIRMATION MODAL
+// -------------------------
+(function() {
+    function initLogoutModal() {
+        if (document.getElementById('logout-modal-overlay')) return;
+
+        var style = document.createElement('style');
+        style.textContent = [
+            '#logout-modal-overlay {',
+            '  position: fixed; inset: 0; z-index: 99999;',
+            '  display: flex; align-items: center; justify-content: center;',
+            '  background: rgba(0, 0, 0, 0.65);',
+            '  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);',
+            '  opacity: 0; pointer-events: none;',
+            '  transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);',
+            '  padding: 20px;',
+            '}',
+            '#logout-modal-overlay.visible { opacity: 1; pointer-events: all; }',
+            '#logout-modal-card {',
+            '  background: #1f2326; border: 1px solid rgba(255, 255, 255, 0.1);',
+            '  border-radius: 24px; padding: 28px 24px 24px;',
+            '  width: 100%; max-width: 360px; text-align: center;',
+            '  box-shadow: 0 20px 40px rgba(0,0,0,0.5);',
+            '  transform: scale(0.92); transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);',
+            '}',
+            'body.light-mode #logout-modal-card {',
+            '  background: #ffffff; border: 1px solid rgba(0, 0, 0, 0.08);',
+            '  box-shadow: 0 20px 40px rgba(0,0,0,0.12);',
+            '}',
+            '#logout-modal-overlay.visible #logout-modal-card { transform: scale(1); }',
+            '.logout-modal-title {',
+            '  font-family: "Poppins", sans-serif; font-size: 20px; font-weight: 700;',
+            '  color: #ffffff; margin: 0 0 10px 0; line-height: 1.3;',
+            '}',
+            'body.light-mode .logout-modal-title { color: #111111; }',
+            '.logout-modal-desc {',
+            '  font-family: "Poppins", sans-serif; font-size: 14px; font-weight: 400;',
+            '  color: #98a2ad; margin: 0 0 24px 0; line-height: 1.4;',
+            '}',
+            'body.light-mode .logout-modal-desc { color: #666666; }',
+            '.logout-modal-actions { display: flex; flex-direction: column; gap: 10px; }',
+            '.logout-btn-confirm {',
+            '  width: 100%; padding: 14px; border: none; border-radius: 16px;',
+            '  background: #ef4444; color: #ffffff;',
+            '  font-family: "Poppins", sans-serif; font-size: 16px; font-weight: 600;',
+            '  cursor: pointer; transition: background 0.15s ease, transform 0.1s ease;',
+            '}',
+            '.logout-btn-confirm:active { transform: scale(0.98); background: #dc2626; }',
+            '.logout-btn-cancel {',
+            '  width: 100%; padding: 14px; border: none; border-radius: 16px;',
+            '  background: rgba(255, 255, 255, 0.08); color: #ffffff;',
+            '  font-family: "Poppins", sans-serif; font-size: 16px; font-weight: 600;',
+            '  cursor: pointer; transition: background 0.15s ease, transform 0.1s ease;',
+            '}',
+            'body.light-mode .logout-btn-cancel {',
+            '  background: #f0f2f5; color: #111111;',
+            '}',
+            '.logout-btn-cancel:active { transform: scale(0.98); }'
+        ].join('\n');
+        document.head.appendChild(style);
+
+        var modalHTML = [
+            '<div id="logout-modal-overlay">',
+            '  <div id="logout-modal-card">',
+            '    <p class="logout-modal-title">Czy na pewno chcesz się wylogować?</p>',
+            '    <p class="logout-modal-desc">Będziesz musiał ponownie wpisać hasło, aby uzyskać dostęp do aplikacji.</p>',
+            '    <div class="logout-modal-actions">',
+            '      <button class="logout-btn-confirm" id="logoutConfirmBtn">Tak, chcę</button>',
+            '      <button class="logout-btn-cancel" id="logoutCancelBtn">Nie, anuluj</button>',
+            '    </div>',
+            '  </div>',
+            '</div>'
+        ].join('');
+        document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+        var overlay = document.getElementById('logout-modal-overlay');
+        var confirmBtn = document.getElementById('logoutConfirmBtn');
+        var cancelBtn = document.getElementById('logoutCancelBtn');
+
+        function hideModal() {
+            overlay.classList.remove('visible');
+        }
+
+        cancelBtn.addEventListener('click', hideModal);
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) hideModal();
+        });
+
+        confirmBtn.addEventListener('click', function() {
+            localStorage.removeItem('user_password');
+            window.location.href = 'id.html';
+        });
+
+        window.showLogoutModal = function() {
+            overlay.classList.add('visible');
+        };
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initLogoutModal);
+    } else {
+        initLogoutModal();
+    }
+})();
