@@ -21,7 +21,8 @@ input::-webkit-inner-spin-button {
     --qr-open: url('https://i.imgur.com/YJGX3eL.png');
     --more: url('https://i.imgur.com/eNy4kUx.png');
     --more-open: url('https://i.imgur.com/sLfN9li.png');
-    --search: url('images/search.png');
+    --search: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238c8c93' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='8'/><line x1='21' y1='21' x2='16.65' y2='16.65'/></svg>");
+    --search-open: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234aa2fc' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='8'/><line x1='21' y1='21' x2='16.65' y2='16.65'/></svg>");
     --text: #4aa2fc;
     --font: #ffffff;
     --font2: black;
@@ -38,6 +39,7 @@ body.light-mode, html.light-mode {
     --font: #1e1f22;
     --text: #0b58cc;
     --font2: #ffffff;
+    --search-open: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230b58cc' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='8'/><line x1='21' y1='21' x2='16.65' y2='16.65'/></svg>");
 }
 
 body{
@@ -144,12 +146,12 @@ p, input{
     background-image: var(--more-open);
 }
 
-.search{
-    background-image: var(--search);
+.bottom_element_image.search {
+    background-image: var(--search) !important;
 }
 
-.search_open{
-    background-image: var(--search);
+.bottom_element_image.search_open {
+    background-image: var(--search-open) !important;
 }
 
 .bottom_element_grid{

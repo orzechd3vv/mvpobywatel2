@@ -36,29 +36,10 @@ body.search_page {
     height: 24px;
     position: relative;
     justify-self: center;
-}
-
-.search_field_icon::before {
-    content: "";
-    position: absolute;
-    left: 1px;
-    top: 1px;
-    width: 13px;
-    height: 13px;
-    border: 3px solid #98a2ad;
-    border-radius: 50%;
-}
-
-.search_field_icon::after {
-    content: "";
-    position: absolute;
-    left: 16px;
-    top: 17px;
-    width: 10px;
-    height: 3px;
-    border-radius: 999px;
-    background: #98a2ad;
-    transform: rotate(45deg);
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2398a2ad' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='8'/><line x1='21' y1='21' x2='16.65' y2='16.65'/></svg>");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .search_field input {

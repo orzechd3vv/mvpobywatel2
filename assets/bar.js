@@ -137,4 +137,62 @@ function initTopBarEffects() {
 
 document.addEventListener("DOMContentLoaded", initTopBarEffects);
 
+// -------------------------
+//  🔥 AUTO-HIGHLIGHT BOTTOM BAR TABS & PREFETCHING
+// -------------------------
+(function() {
+    // 1. Highlight active bottom tab based on current page
+    var path = window.location.pathname.toLowerCase();
+    var activeTab = 'home'; // default
+    if (path.includes('services.html') || path.includes('safe_in_web.html') || path.includes('flood.html') || path.includes('pesel_status.html') || path.includes('business.html') || path.includes('penalties.html') || path.includes('tickets.html') || path.includes('check_id.html') || path.includes('check_pesel.html') || path.includes('recepty.html') || path.includes('finish_case.html') || path.includes('my_cases.html') || path.includes('collect_id.html') || path.includes('elections.html') || path.includes('driver_license.html')) {
+        activeTab = 'services';
+    } else if (path.includes('qr.html') || path.includes('scanqr.html') || path.includes('showqr.html')) {
+        activeTab = 'qr';
+    } else if (path.includes('more.html') || path.includes('moreid.html') || path.includes('appearance.html')) {
+        activeTab = 'more';
+    } else if (path.includes('search.html')) {
+        activeTab = 'search';
+    } else if (path.includes('home.html') || path.includes('card.html')) {
+        activeTab = 'home';
+    }
+
+    var imgs = document.querySelectorAll('.bottom_element_image');
+    var texts = document.querySelectorAll('.bottom_element_text');
+    var openClasses = ['home_open', 'services_open', 'qr_open', 'more_open', 'search_open'];
+    
+    imgs.forEach(function(img) { 
+        openClasses.forEach(function(c) { img.classList.remove(c); }); 
+    });
+    texts.forEach(function(t) { t.classList.remove('open'); });
+
+    document.querySelectorAll('.bottom_element_grid').forEach(function(el) {
+        var send = el.getAttribute('send');
+        var img = el.querySelector('.bottom_element_image');
+        var txt = el.querySelector('.bottom_element_text');
+        if (send === activeTab) { 
+            if (img) img.classList.add(activeTab + '_open'); 
+            if (txt) txt.classList.add('open'); 
+        }
+    });
+
+    // 2. Prefetch all other routes to make navigation instant
+    function prefetchRoutes() {
+        var filesToPrefetch = Object.values(ROUTES);
+        filesToPrefetch.forEach(function(file) {
+            // Don't prefetch current page
+            if (path.indexOf(file) !== -1) return;
+            var link = document.createElement('link');
+            link.rel = 'prefetch';
+            link.href = file + (window.location.search || localStorage.getItem('mobywatel_session') || '');
+            document.head.appendChild(link);
+        });
+    }
+
+    if (window.requestIdleCallback) {
+        window.requestIdleCallback(prefetchRoutes);
+    } else {
+        window.addEventListener('load', prefetchRoutes);
+    }
+})();
+
 
