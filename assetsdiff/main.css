@@ -666,18 +666,16 @@ body.has-blur-topbar.body-with-top-bar {
     border-radius: 15px;
     margin-bottom: 40px;
     margin-top: 15px;
-    overflow: hidden;
 }
 
 .service{
-    width: 100%;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
     display: grid;
     grid-template-columns: 8% 77% 15%;
     border-bottom: 0.5px solid var(--gray-border);
     height: max-content;
-    cursor: pointer;
 }
 
 .service_icon{
@@ -984,30 +982,6 @@ body,
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, filter 0.3s ease;
 }
 
-/* ========================================
-   PRESS FEEDBACK — niebieskie wypełnienie (jak w prawdziwej aplikacji)
-   ======================================== */
-.service:active {
-    background-color: rgba(63, 122, 255, 0.32) !important;
-    transition: background-color 0.05s linear !important;
-}
-body.light-mode .service:active {
-    background-color: #c9dcff !important;
-}
-
-/* ========================================
-   ENTRANCE ANIMATION — usługi wjeżdżają po kolei (jak w prawdziwej aplikacji)
-   ======================================== */
-body.anim-rows .service {
-    opacity: 0;
-    animation: rowRise 0.45s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
-    animation-delay: var(--d, 0ms);
-}
-@keyframes rowRise {
-    from { opacity: 0; transform: translateY(16px); }
-    to   { opacity: 1; transform: translateY(0); }
-}
-
 /* Bottom bar */
 body.light-mode .bottom_element_text {
     color: #555558;
@@ -1075,9 +1049,9 @@ body.light-mode.more-screen .arrow {
     filter: brightness(0) !important;
 }
 
-/* services.html arrows - gray in light mode */
+/* services.html icons - tinted blue in light mode */
 body.light-mode.hero-layout:not(.more-screen) .arrow {
-    filter: brightness(0) opacity(0.4) !important;
+    filter: brightness(0.3) sepia(1) saturate(5) hue-rotate(190deg) opacity(0.4) !important;
 }
 
 /* appearance.html (no more-screen class, hero-layout) */
