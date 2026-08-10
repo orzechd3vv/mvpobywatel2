@@ -149,9 +149,16 @@ body.hero-layout [data-hero]{
     color: #939aab;
 }
 
+.hero-search__icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
 .hero-search__icon svg{
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
 }
 
 .hero-search input{
@@ -161,12 +168,14 @@ body.hero-layout [data-hero]{
     color: #ffffff;
     font-size: 16px;
     font-weight: 500;
+    font-family: "Poppins", sans-serif;
     outline: none;
     user-select: text;
 }
 
 .hero-search input::placeholder{
     color: #aeb4c2;
+    font-family: "Poppins", sans-serif;
 }
 
 .search-empty{

@@ -19,6 +19,7 @@ body.search_page {
     line-height: 1;
     font-weight: 750;
     letter-spacing: 0;
+    font-family: "Poppins", sans-serif;
 }
 
 .search_field {
@@ -32,9 +33,11 @@ body.search_page {
 }
 
 .search_field_icon {
-    width: 24px;
-    height: 24px;
-    position: relative;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     justify-self: center;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2398a2ad' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='8'/><line x1='21' y1='21' x2='16.65' y2='16.65'/></svg>");
     background-size: contain;
@@ -48,12 +51,14 @@ body.search_page {
     outline: 0;
     background: transparent;
     color: #fff;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 500;
+    font-family: "Poppins", sans-serif;
 }
 
 .search_field input::placeholder {
     color: #98a2ad;
+    font-family: "Poppins", sans-serif;
 }
 
 .search_empty {
