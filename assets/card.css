@@ -704,22 +704,38 @@ body .bottom_bar{
    LIGHT MODE SUPPORT
    ======================================== */
 body.light-mode .title_text {
-    color: var(--font) !important;
+    color: #111111 !important;
+}
+body.light-mode .data_title {
+    color: #111111 !important;
+}
+body.light-mode .data_value {
+    color: #555558 !important;
+}
+body.light-mode .eagle_text {
+    color: #444444 !important;
 }
 body.light-mode .field label {
     color: #555558 !important;
 }
 body.light-mode .field strong {
-    color: var(--font) !important;
+    color: #111111 !important;
+}
+body.light-mode .field b {
+    color: #111111 !important;
 }
 body.light-mode .field {
     border-bottom: 1px solid #e2e4e8 !important;
+}
+body.light-mode .custom-card {
+    background-color: #ffffff !important;
+    border: 1px solid rgba(0,0,0,0.08) !important;
 }
 body.light-mode .value-copy label {
     color: #555558 !important;
 }
 body.light-mode .value-copy button {
-    color: var(--text) !important;
+    color: #0b58cc !important;
     background-color: #e6f0fa !important;
 }
 body.light-mode .value-copy button:hover {
@@ -732,37 +748,41 @@ body.light-mode .help_img {
     filter: invert(0.3) sepia(1) saturate(20) hue-rotate(190deg);
 }
 body.light-mode .icon-circle {
+    background-color: #ffffff !important;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+    border: 1px solid rgba(0, 0, 0, 0.06);
 }
 body.light-mode .top-buttons button span {
-    color: var(--font) !important;
+    color: #111111 !important;
 }
 body.light-mode .top-buttons button .icon-circle {
-    background-color: var(--background2) !important;
+    background-color: #ffffff !important;
 }
 body.light-mode .info_holder {
-    background: var(--background2) !important;
+    background: #ffffff !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
 }
 body.light-mode .additional_title {
     color: #555558 !important;
 }
 body.light-mode .additional_subtitle {
-    color: var(--font) !important;
+    color: #111111 !important;
 }
 body.light-mode .additional_grid {
     border-bottom: 0.5px solid #e2e4e8 !important;
 }
 body.light-mode .bottom_update {
-    background: var(--background2) !important;
+    background: #ffffff !important;
+    border: 1px solid rgba(0,0,0,0.08) !important;
 }
 body.light-mode .bottom_update_text {
     color: #555558 !important;
 }
 body.light-mode .bottom_update_value {
-    color: var(--font) !important;
+    color: #111111 !important;
 }
 body.light-mode .action_arrow {
-    filter: invert(0.5);
+    filter: invert(0.3);
 }
 body.light-mode .bottomtesktern {
     color: #8e8e93;

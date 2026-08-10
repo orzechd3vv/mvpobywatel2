@@ -38,7 +38,7 @@ body.light-mode, html.light-mode {
     --background2: #ffffff;
     --font: #1e1f22;
     --text: #0b58cc;
-    --font2: #ffffff;
+    --font2: #1e1f22;
     --search: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231e1f22' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='8'/><line x1='21' y1='21' x2='16.65' y2='16.65'/></svg>");
     --search-open: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230b58cc' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='8'/><line x1='21' y1='21' x2='16.65' y2='16.65'/></svg>");
 }
@@ -394,15 +394,17 @@ body, .bottom_bar, .top_grid, .top_slide_bar, p, input {
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, filter 0.3s ease;
 }
 
-/* Icons: clean black with brightness(0), no quality loss */
 body.light-mode .service_icon,
-body.light-mode .service_icon2,
-body.light-mode .icon-circle img {
+body.light-mode .service_icon2 {
     filter: brightness(0) !important;
 }
 
 body.light-mode .arrow {
     filter: brightness(0) opacity(0.4) !important;
+}
+
+body.light-mode .title_text {
+    color: #111111 !important;
 }
 
 /* Title in top slide bar */
