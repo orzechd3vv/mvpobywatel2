@@ -3,23 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>mObywatel</title>
-    <link rel="stylesheet" href="assets/card.css?v=1.2">
+    <link rel="stylesheet" href="assets/check_id.css">
     <link rel="stylesheet" href="assets/main.css?v=3">
     <link rel="icon" type="image/x-icon" href="https://i.imgur.com/U7TRg0V.png">
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=0.8, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
 </head>
 <body class="has-blur-topbar">
     <script src="assets/clear_cache.js"></script>
-
-    <div class="top_grid topbar-always">
-        <div class="action_grid" onclick="sendTo('more')">
-            <img src="https://i.imgur.com/aXIO2NG.png" class="back_img">
-            <p class="back_text">Więcej</p>
-        </div>
-        <p class="title_text">Dane zameldowania</p>
-        <img src="https://i.imgur.com/VHNv1TC.png" class="help_img">
-    </div>
 
     <div class="bottom_bar">
         <div class="bottom_bar_grid">
@@ -46,21 +38,54 @@
         </div>
     </div>
 
-    <div class="container" style="max-width: 400px; margin: 90px auto 140px;">
-        <div class="card custom-card">
-            <div class="field">
-                <label>Adres zameldowania na pobyt stały</label>
-                <strong id="residence_address" style="font-size: 20px;">-</strong>
-            </div>
+    <div class="top_grid">
+        <div class="action_grid" onclick="sendTo('more')">
+            <svg class="back_arrow" width="12" height="20" viewBox="0 0 12 20" fill="none">
+                <path d="M10 2L2 10L10 18" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <p class="back_text">Więcej</p>
+        </div>
+        <p class="title_text">Dane zameldowania</p>
+    </div>
 
-            <div class="field">
-                <label>Miejscowość</label>
-                <strong id="residence_city" style="font-size: 20px;">-</strong>
+    <div class="container">
+        <div class="icon-section">
+            <div class="icon-circle">
+                <img src="./more_files/house.png" alt="Zameldowanie" style="width: 44px; height: 44px; object-fit: contain;">
             </div>
+        </div>
 
-            <div class="field" style="border-bottom: none;">
-                <label>Data zameldowania</label>
-                <strong id="residence_date" style="font-size: 20px;">-</strong>
+        <div class="titleall">
+            <div class="title">Twoje dane<br>zameldowania</div>
+            <div class="subtitle">Dane pobrane z rejestru PESEL oraz ewidencji ludności.</div>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-text">
+                        <div class="card-title">Adres zameldowania na pobyt stały</div>
+                        <div class="card-subtitle" id="residence_address" style="font-size: 16px; font-weight: 600; color: var(--font); margin-top: 4px;">-</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-text">
+                        <div class="card-title">Miejscowość</div>
+                        <div class="card-subtitle" id="residence_city" style="font-size: 16px; font-weight: 600; color: var(--font); margin-top: 4px;">-</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-text">
+                        <div class="card-title">Data zameldowania</div>
+                        <div class="card-subtitle" id="residence_date" style="font-size: 16px; font-weight: 600; color: var(--font); margin-top: 4px;">-</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

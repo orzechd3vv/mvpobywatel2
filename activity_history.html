@@ -3,23 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>mObywatel</title>
-    <link rel="stylesheet" href="assets/card.css?v=1.2">
+    <link rel="stylesheet" href="assets/check_id.css">
     <link rel="stylesheet" href="assets/main.css?v=3">
     <link rel="icon" type="image/x-icon" href="https://i.imgur.com/U7TRg0V.png">
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=0.8, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
 </head>
 <body class="has-blur-topbar">
     <script src="assets/clear_cache.js"></script>
-
-    <div class="top_grid topbar-always">
-        <div class="action_grid" onclick="sendTo('more')">
-            <img src="https://i.imgur.com/aXIO2NG.png" class="back_img">
-            <p class="back_text">Więcej</p>
-        </div>
-        <p class="title_text">Historia aktywności</p>
-        <img src="https://i.imgur.com/VHNv1TC.png" class="help_img">
-    </div>
 
     <div class="bottom_bar">
         <div class="bottom_bar_grid">
@@ -46,38 +38,67 @@
         </div>
     </div>
 
-    <div class="container" style="max-width: 400px; margin: 90px auto 140px;">
-        <div class="card custom-card">
-            <div class="field">
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <strong>Zalogowano do aplikacji</strong>
-                    <label id="today_time_1" style="margin:0;">Dzisiaj</label>
-                </div>
-                <label style="font-size: 13px; margin-top: 4px;">Poprawna weryfikacja hasła</label>
-            </div>
+    <div class="top_grid">
+        <div class="action_grid" onclick="sendTo('more')">
+            <svg class="back_arrow" width="12" height="20" viewBox="0 0 12 20" fill="none">
+                <path d="M10 2L2 10L10 18" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <p class="back_text">Więcej</p>
+        </div>
+        <p class="title_text">Historia aktywności</p>
+    </div>
 
-            <div class="field">
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <strong>Wyświetlono mDowód</strong>
-                    <label id="today_time_2" style="margin:0;">Dzisiaj</label>
-                </div>
-                <label style="font-size: 13px; margin-top: 4px;">Pomyślny odczyt dokumentu cyfrowego</label>
+    <div class="container">
+        <div class="icon-section">
+            <div class="icon-circle">
+                <img src="./more_files/clock.png" alt="Historia" style="width: 44px; height: 44px; object-fit: contain;">
             </div>
+        </div>
 
-            <div class="field">
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <strong>Sprawdzono status PESEL</strong>
-                    <label style="margin:0;">Wczoraj</label>
+        <div class="titleall">
+            <div class="title">Historia zdarzeń<br>i aktywności</div>
+            <div class="subtitle">Lista ostatnich zdarzeń zarejestrowanych na Twoim koncie.</div>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-text">
+                        <div class="card-title">Zalogowano do aplikacji</div>
+                        <div class="card-desc">Poprawna weryfikacja hasła</div>
+                    </div>
+                    <span id="today_time_1" style="font-size: 13px; color: #8e8e93; font-weight: 500;">Dzisiaj</span>
                 </div>
-                <label style="font-size: 13px; margin-top: 4px;">Status: Zastrzeżony</label>
             </div>
-
-            <div class="field" style="border-bottom: none;">
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <strong>Synchronizacja danych</strong>
-                    <label style="margin:0;">3 dni temu</label>
+            <div class="card-divider"></div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-text">
+                        <div class="card-title">Wyświetlono mDowód</div>
+                        <div class="card-desc">Pomyślny odczyt dokumentu cyfrowego</div>
+                    </div>
+                    <span id="today_time_2" style="font-size: 13px; color: #8e8e93; font-weight: 500;">Dzisiaj</span>
                 </div>
-                <label style="font-size: 13px; margin-top: 4px;">Pobrano najnowsze dane konta</label>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-text">
+                        <div class="card-title">Sprawdzono status PESEL</div>
+                        <div class="card-desc">Status: Zastrzeżony</div>
+                    </div>
+                    <span style="font-size: 13px; color: #8e8e93; font-weight: 500;">Wczoraj</span>
+                </div>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-text">
+                        <div class="card-title">Synchronizacja danych</div>
+                        <div class="card-desc">Pobrano najnowsze dane konta</div>
+                    </div>
+                    <span style="font-size: 13px; color: #8e8e93; font-weight: 500;">3 dni temu</span>
+                </div>
             </div>
         </div>
     </div>
