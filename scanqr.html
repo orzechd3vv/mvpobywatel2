@@ -6,7 +6,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <link rel="stylesheet" href="assetsdiff/main.css">
+    <link rel="stylesheet" href="assetsdiff/main.css?v=3">
     <link rel="stylesheet" href="./scanqr_files/scan.css">
     <link rel="icon" type="image/x-icon" href="https://i.imgur.com/U7TRg0V.png">
     <link rel="apple-touch-icon" href="https://i.imgur.com/U7TRg0V.png">
@@ -17,6 +17,7 @@
     <script src="./scanqr_files/html5-qrcode"></script>
 </head>
 <body class="has-blur-topbar">
+    <script src="assets/clear_cache.js"></script>
     <div class="top_grid top_grid_fixed">
         <div class="action_grid_fixed">
             <img src="./scanqr_files/back_blue.png" class="back_img">
@@ -95,10 +96,9 @@
         </div>
     </div>
 
-    <script src="assets/bar.js" defer></script>
-    <script src="assets/theme.js" defer></script>
-    <script src="assetsdiff/manifest.js.pobrane"></script>
-    <script src="assetsdiff/cache.js.pobrane"></script>
+    <script src="assets/bar.js?v=3" defer></script>
+    <script src="assets/theme.js?v=3" defer></script>
+    <script src="assets/manifest.js"></script>
     <script>
 
         if (localStorage.getItem('top') === 'card'){
@@ -275,8 +275,6 @@
             submitButton.disabled = e.target.value.length !== 6;
         });
     </script>
-    <script src="assets/theme.js" defer></script>
-    <script src="assetsdiff/manifest.js.pobrane"></script>
-    <script src="assetsdiff/cache.js.pobrane"></script>
-
-</body></html>
+    <script src="assets/theme.js?v=3" defer></script>
+    <script src="assets/manifest.js"></script>
+    </body></html>
