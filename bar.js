@@ -15,6 +15,7 @@ var ROUTES = {
     showqr: 'showqr.html',
     gen: 'gen.html',
     card: 'card.html',
+    search: 'search.html',
 };
 
 function sendTo(key){

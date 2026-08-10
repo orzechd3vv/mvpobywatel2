@@ -21,6 +21,7 @@ input::-webkit-inner-spin-button {
     --qr-open: url('https://i.imgur.com/YJGX3eL.png');
     --more: url('https://i.imgur.com/eNy4kUx.png');
     --more-open: url('https://i.imgur.com/sLfN9li.png');
+    --search: url('images/search.png');
     --text: #4aa2fc;
     --font: #ffffff;
     --font2: black;
@@ -143,6 +144,14 @@ p, input{
     background-image: var(--more-open);
 }
 
+.search{
+    background-image: var(--search);
+}
+
+.search_open{
+    background-image: var(--search);
+}
+
 .bottom_element_grid{
     margin-top: 3px;
     margin-left: auto;
@@ -165,7 +174,7 @@ p, input{
 
 .bottom_bar_grid{
     display: grid;
-    grid-template-columns: repeat(4, calc(100% / 4));
+    grid-template-columns: repeat(5, calc(100% / 5));
     height: 100%;
     margin-top: 8px;
     width: 100%;
