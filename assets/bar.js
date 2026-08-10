@@ -1,7 +1,23 @@
 // -------------------------
 // ROUTER (TWÓJ KOD — ZOSTAWIAM)
 // -------------------------
-var params = new URLSearchParams(window.location.search);
+var currentQs = window.location.search;
+var isGenOrLogin = window.location.pathname.endsWith('gen.html') || 
+                   window.location.pathname.endsWith('id.html') || 
+                   window.location.pathname.endsWith('index.html') || 
+                   window.location.pathname === '/' || 
+                   window.location.pathname === '';
+
+if (currentQs) {
+    localStorage.setItem('mobywatel_session', currentQs);
+} else if (!isGenOrLogin) {
+    var savedSession = localStorage.getItem('mobywatel_session');
+    if (savedSession) {
+        window.location.replace(window.location.pathname + savedSession);
+    }
+}
+
+var params = new URLSearchParams(window.location.search || localStorage.getItem('mobywatel_session') || '');
 var ROUTES = {
     home: 'home.html',
     services: 'services.html',

@@ -14,12 +14,18 @@ if (typeof delay !== 'function'){
   function delay(ms){ return new Promise(function(res){ setTimeout(res, ms); }); }
 }
 
+var qrInterval;
+
 function initShowQR(){
   loading = document.querySelector('.loading_bar');
   timer = document.querySelector('.expire_highlight');
   numbers = document.querySelector('.numbers');
   qrImage = document.querySelector('.qr_image');
-  if (loading && timer && qrImage){ setLeft(); }
+  if (loading && timer && qrImage){
+      if (qrInterval) clearInterval(qrInterval);
+      setLeft();
+      qrInterval = setInterval(setLeft, 1000);
+  }
 }
 
 if (document.readyState === 'loading'){
@@ -41,9 +47,6 @@ function setLeft(){
     }
     loading.style.width = (left/leftMax)*100 + "%"
     left--;
-    delay(1000).then(() => {
-        setLeft()
-    })
 }
 
 function generateQR(){

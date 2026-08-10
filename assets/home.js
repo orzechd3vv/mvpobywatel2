@@ -2,6 +2,7 @@ const cardContainer = document.querySelector('.card-container');
 let startX;
 let scrollLeft;
 
+if (cardContainer) {
 cardContainer.addEventListener('mousedown', (e) => {
   startX = e.pageX - cardContainer.offsetLeft;
   scrollLeft = cardContainer.scrollLeft;
@@ -37,3 +38,4 @@ cardContainer.addEventListener('touchmove', (e) => {
   const walk = (x - startX) * 2; 
   cardContainer.scrollLeft = scrollLeft - walk;
 });
+}

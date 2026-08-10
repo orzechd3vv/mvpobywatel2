@@ -46,14 +46,12 @@ function delay(time) {
     return new Promise(resolve => setTimeout(resolve, time));
 }
 
-setClock();
 function setClock(){
-    date = new Date();
+    var date = new Date();
     time.innerHTML = "Czas: " + date.toLocaleTimeString("pl-PL", optionsTime) + " " + date.toLocaleDateString("pl-PL", options);    
-    delay(1000).then(() => {
-        setClock();
-    })
 }
+setClock();
+setInterval(setClock, 1000);
 
 var unfold = document.querySelector(".info_holder");
 unfold.addEventListener('click', () => {
