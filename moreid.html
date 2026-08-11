@@ -17,40 +17,40 @@
   <div class="top_grid">
         <div class="action_grid">
             <img src="https://i.imgur.com/aXIO2NG.png" class="back_img">
-            <p onclick="sendTo('card')" class="back_text">Wróć</p>
+            <p onclick="sendTo('card')" class="back_text" data-i18n="card.back">Wróć</p>
         </div>
-        <p class="title_text">Dane&nbsp;dowodu&nbsp;osobistego</p>
+        <p class="title_text" data-i18n="moreid.title">Dane&nbsp;dowodu&nbsp;osobistego</p>
         <img src="https://i.imgur.com/VHNv1TC.png" class="help_img">
     </div>
 
     <div class="card custom-card">
                 <div class="field">
-                    <label>Seria i numer</label>
+                    <label data-i18n="moreid.series">Seria i numer</label>
                     <div class="value-copy">
                         <b style="font-size:23px">ZZC 108201</b>
-                        <button class="value-copy">Kopiuj</button> 
+                        <button class="value-copy" data-i18n="card.copy">Kopiuj</button> 
                     </div>
                 </div>
                 <div class="field">
-  <label>Status</label>
+  <label data-i18n="moreid.status">Status</label>
   <div class="status_with_icon">
     <img src="https://i.imgur.com/XYP33Vx.png" alt="Status Ikona" class="status_icon">
-    <strong>Wydany</strong>
+    <strong data-i18n="moreid.issued">Wydany</strong>
   </div>
 </div>
                 
                 <div class="field">
-                    <label>Organ wydający</label>
+                    <label data-i18n="moreid.authority">Organ wydający</label>
                     <strong>URZĄD MIASTA WARSZAWA</strong>
                 </div>
 
                 <div class="field">
-                    <label>Termin ważności</label>
+                    <label data-i18n="moreid.expiry">Termin ważności</label>
                     <strong>13.04.2032</strong>
                 </div>
             
                 <div class="field">
-                    <label>Data wydania</label>
+                    <label data-i18n="moreid.issue_date">Data wydania</label>
                     <strong>14.07.2022</strong>
                 </div>
             
@@ -59,22 +59,23 @@
             <div class="bottom_holder" style="height: 90px; margin-bottom: 12px;">
             <div class="bottom_update">
                 <div class="bottom_update_grid">
-                    <p class="bottom_update_text" style="margin-left: 0px;">Ostatnia aktualizacja</p>
+                    <p class="bottom_update_text" style="margin-left: 0px;" data-i18n="moreid.last_update">Ostatnia aktualizacja</p>
                     <p class="bottom_update_value" style="margin-left: 0px;"></p>
                 </div>
-                <button class="main_button update">Aktualizuj</button>
+                <button class="main_button update" data-i18n="moreid.update_btn">Aktualizuj</button>
             </div>
         </div>
       
       <div class="bottom_holderarrow">
   <div class="bottom_grid">
     <img class="phone" src="https://i.imgur.com/RbOXgIB.png" alt="Telefon">
-    <p class="bottom_text">Zmień PIN do podpisu<br>osobistego</p>
+    <p class="bottom_text" data-i18n="moreid.change_pin">Zmień PIN do podpisu osobistego</p>
     <img class="action_arrow" src="https://i.imgur.com/lTxuUMF.png" alt="Strzałka">
   </div>
 </div>
         <script src="assets/bar.js?v=3" defer></script>
         <script src="assets/theme.js?v=3" defer></script>
+        <script src="assets/i18n.js"></script>
         <script src="assets/card.js?v=1.0"></script>
         <script src="assets/manifest.js"></script>
 </body>

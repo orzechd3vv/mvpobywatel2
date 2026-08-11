@@ -17,9 +17,9 @@
   <div class="top_grid">
     <div class="action_grid">
       <img src="https://i.imgur.com/aXIO2NG.png" class="back_img">
-      <p onclick="sendTo('card')" class="back_text">mDowód</p>
+      <p onclick="sendTo('card')" class="back_text" data-i18n="shortcuts.back">mDowód</p>
     </div>
-    <p class="title_text">Pozostałe skróty</p>
+    <p class="title_text" data-i18n="shortcuts.title">Pozostałe skróty</p>
   </div>
 
   
@@ -27,19 +27,19 @@
   <div class="container">
      <div class="service" onclick="sendTo('penalties')">
                 <img class="service_icon2" src="https://i.imgur.com/SD1nJTn.png">
-                <p class="service_name">Mandaty</p>
+                <p class="service_name" data-i18n="shortcuts.fines">Mandaty</p>
                 <img class="arrow" src="https://i.imgur.com/lTxuUMF.png">
             </div>
             <div class="service" style="border: none;" onclick="sendTo('elections')">
                 <img class="service_icon2" src="https://i.imgur.com/nyVKZtP.png">
-                <p class="service_name">Wybory</p>
+                <p class="service_name" data-i18n="shortcuts.elections">Wybory</p>
                 <img class="arrow" src="https://i.imgur.com/lTxuUMF.png">
             </div>
   </div>
   <div class="container2">
     <div class="service2">
                 <img class="service_icon" src="https://i.imgur.com/sYaoZg5.png">
-                <p class="service_name" style="color: #b90000;">Usuń dokument</p>
+                <p class="service_name" style="color: #b90000;" data-i18n="shortcuts.remove_doc">Usuń dokument</p>
             </div>
   </div>
 </div>
@@ -47,5 +47,6 @@
 
     <script src="assets/bar.js?v=3" defer></script>
     <script src="assets/theme.js?v=3" defer></script>
+    <script src="assets/i18n.js"></script>
     <script src="assets/manifest.js"></script>
 </html>

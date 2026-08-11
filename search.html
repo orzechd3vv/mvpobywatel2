@@ -18,35 +18,35 @@
         <div class="bottom_bar_grid">
             <div class="bottom_element_grid" send="home">
                 <div class="bottom_element_image home"></div>
-                <p class="bottom_element_text">Dokumenty</p>
+                <p class="bottom_element_text" data-i18n="nav.documents">Dokumenty</p>
             </div>
             <div class="bottom_element_grid" send="services">
                 <div class="bottom_element_image services"></div>
-                <p class="bottom_element_text">Usługi</p>
+                <p class="bottom_element_text" data-i18n="nav.services">Usługi</p>
             </div>
             <div class="bottom_element_grid" send="qr">
                 <div class="bottom_element_image qr"></div>
-                <p class="bottom_element_text">Kod QR</p>
+                <p class="bottom_element_text" data-i18n="nav.qr">Kod QR</p>
             </div>
             <div class="bottom_element_grid" send="more">
                 <div class="bottom_element_image more"></div>
-                <p class="bottom_element_text">Więcej</p>
+                <p class="bottom_element_text" data-i18n="nav.more">Więcej</p>
             </div>
             <div class="bottom_element_grid" send="search">
                 <div class="bottom_element_image search_open search"></div>
-                <p class="bottom_element_text open">Szukaj</p>
+                <p class="bottom_element_text open" data-i18n="nav.search">Szukaj</p>
             </div>
         </div>
     </div>
 
     <main class="search_shell">
-        <h1>Szukaj</h1>
+        <h1 data-i18n="search.title">Szukaj</h1>
         <label class="search_field">
             <span class="search_field_icon" aria-hidden="true"></span>
-            <input type="search" placeholder="Wpisz szukaną frazę">
+            <input type="search" placeholder="Wpisz szukaną frazę" data-i18n="search.input">
         </label>
         <div class="search_empty">
-            <p>Brak wyników.</p>
+            <p data-i18n="search.empty">Brak wyników.</p>
         </div>
     </main>
 
@@ -64,6 +64,7 @@
     <script src="assets/bar.js?v=3"></script>
     <script src="assets/manifest.js"></script>
     <script src="assets/theme.js?v=3" defer></script>
+    <script src="assets/i18n.js"></script>
     <script src="assets/search.js?v=3" defer></script>
     <script>
         document.getElementById("popupClose").addEventListener("click", () => {

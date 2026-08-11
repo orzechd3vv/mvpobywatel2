@@ -18,23 +18,23 @@
         <div class="bottom_bar_grid">
             <div class="bottom_element_grid" send="home">
                 <div class="bottom_element_image home_open home"></div>
-                <p class="bottom_element_text open">Dokumenty</p>
+                <p class="bottom_element_text open" data-i18n="nav.documents">Dokumenty</p>
             </div>
             <div class="bottom_element_grid" send="services">
                 <div class="bottom_element_image services"></div>
-                <p class="bottom_element_text">Usługi</p>
+                <p class="bottom_element_text" data-i18n="nav.services">Usługi</p>
             </div>
             <div class="bottom_element_grid" send="qr">
                 <div class="bottom_element_image qr"></div>
-                <p class="bottom_element_text">Kod QR</p>
+                <p class="bottom_element_text" data-i18n="nav.qr">Kod QR</p>
             </div>
             <div class="bottom_element_grid" send="more">
                 <div class="bottom_element_image more"></div>
-                <p class="bottom_element_text">Więcej</p>
+                <p class="bottom_element_text" data-i18n="nav.more">Więcej</p>
             </div>
             <div class="bottom_element_grid" send="search">
                 <div class="bottom_element_image search"></div>
-                <p class="bottom_element_text">Szukaj</p>
+                <p class="bottom_element_text" data-i18n="nav.search">Szukaj</p>
             </div>
         </div>
     </div>
@@ -44,9 +44,9 @@
             <svg class="back_arrow" width="12" height="20" viewBox="0 0 12 20" fill="none">
                 <path d="M10 2L2 10L10 18" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-            <p class="back_text">Usługi</p>
+            <p class="back_text" data-i18n="nav.services">Usługi</p>
         </div>
-        <p class="title_text">Zastrzeż PESEL</p>
+        <p class="title_text" data-i18n="pesel.title">Zastrzeż PESEL</p>
         <div class="help_icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="10"/>
@@ -68,14 +68,14 @@
         </div>
 
         <div class="titleall">
-            <div class="title">Twój PESEL jest<br>zastrzeżony</div>
-            <div class="subtitle">Teraz nikt nie wykorzysta go bez Twojej wiedzy.</div>
+            <div class="title" data-i18n="pesel.reserved_title">Twój PESEL jest zastrzeżony</div>
+            <div class="subtitle" data-i18n="pesel.reserved_desc">Teraz nikt nie wykorzysta go bez Twojej wiedzy.</div>
         </div>
 
         <div class="cards">
             <div class="card-content">
-                <div class="card-title">Zastrzeż PESEL</div>
-                <button class="action-button">Cofnij zastrzeżenie</button>
+                <div class="card-title" data-i18n="pesel.reserve_btn">Zastrzeż PESEL</div>
+                <button class="action-button" data-i18n="pesel.unreserve_btn">Cofnij zastrzeżenie</button>
             </div>
         </div>
 
@@ -87,19 +87,19 @@
                     <line x1="12" y1="8" x2="12.01" y2="8"/>
                 </svg>
             </div>
-            <div class="info-text">
+            <div class="info-text" data-i18n="pesel.info">
                 Po każdym cofnięciu zastrzeżenia numeru PESEL nie możesz skorzystać z usługi przez 30 minut.
             </div>
         </div>
 
-        <div class="history-title">Historia</div>
+        <div class="history-title" data-i18n="pesel.history">Historia</div>
 
         <div class="cards history-cards">
             <div class="card">
                 <div class="card-content">
                     <div class="card-text">
-                        <div class="card-title">Kto sprawdzał Twój PESEL</div>
-                        <div class="card-desc">Ostatnia weryfikacja 01.08.2025</div>
+                        <div class="card-title" data-i18n="pesel.who_checked">Kto sprawdzał Twój PESEL</div>
+                        <div class="card-desc" data-i18n="pesel.last_check">Ostatnia weryfikacja 01.08.2025</div>
                     </div>
                     <svg class="card-arrow" width="10" height="16" viewBox="0 0 10 16" fill="none">
                         <path d="M2 2L8 8L2 14" stroke="#bbb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -110,8 +110,8 @@
             <div class="card">
                 <div class="card-content">
                     <div class="card-text">
-                        <div class="card-title">Twoje zmiany</div>
-                        <div class="card-desc">Ostatnia zmiana 01.08.2025</div>
+                        <div class="card-title" data-i18n="pesel.your_changes">Twoje zmiany</div>
+                        <div class="card-desc" data-i18n="pesel.last_change">Ostatnia zmiana 01.08.2025</div>
                     </div>
                     <svg class="card-arrow" width="10" height="16" viewBox="0 0 10 16" fill="none">
                         <path d="M2 2L8 8L2 14" stroke="#bbb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -123,5 +123,6 @@
 </body>
 <script src="assets/bar.js?v=3" defer></script>
 <script src="assets/theme.js?v=3" defer></script>
+<script src="assets/i18n.js"></script>
 <script src="assets/manifest.js"></script>
 </html>
